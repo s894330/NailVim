@@ -4,8 +4,8 @@ NailVim
 Vim config used by Nail
 
 Important:
-
-    before you follow the installation steps, backup ~/.vimrc, ~/.vim first
+    
+before you follow the installation steps, backup ~/.vimrc, ~/.vim first
 
 Installation:
 
