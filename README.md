@@ -26,3 +26,4 @@ Switch to the `~/.vim` directory, and fetch submodules:
 Note:
 List of plugins which not controlled by git submodule:
     taglist -- added at 2013/12/1 by Nail
+    trinity -- added at 2013/12/1 by Nail

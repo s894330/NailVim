@@ -10,7 +10,7 @@ filetype on
 "i: Insert mode
 "c: Command-line mode
 "a: All mode
-set mouse=nv
+set mouse=n
 
 "for trinity
 nmap <F8>   :TrinityToggleAll<CR>
