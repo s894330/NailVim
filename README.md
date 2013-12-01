@@ -3,7 +3,7 @@ NailVim
 
 Vim config used by Nail
 
-Important:    
+Important:
     before you follow the installation steps, backup ~/.vimrc, ~/.vim first
 
 Installation:
@@ -24,6 +24,5 @@ Switch to the `~/.vim` directory, and fetch submodules:
     git submodule update
 
 Note:
-
 List of plugins which not controlled by git submodule:
     taglist -- added at 2013/12/1 by Nail
