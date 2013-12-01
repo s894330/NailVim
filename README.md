@@ -2,6 +2,7 @@ NailVim
 =======
 
 Vim config used by Nail
+
 Installation:
 
     git clone git://github.com/nelstrom/dotvim.git ~/.vim
