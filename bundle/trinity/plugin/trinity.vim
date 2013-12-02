@@ -100,7 +100,7 @@ function! <SID>Trinity_InitTagList()
     " Split to the right side of the screen
     let g:Tlist_Use_Left_Window = 1
     " Set the window width
-    let g:Tlist_WinWidth = 40
+    let g:Tlist_WinWidth = 34
     " Sort by the order
     let g:Tlist_Sort_Type = "order"
     " Do not display the help info
@@ -124,12 +124,12 @@ function! <SID>Trinity_InitSourceExplorer()
 
     " // Set the height of Source Explorer window                                  "
     if has("unix")
-        let g:SrcExpl_winHeight = 13
+        let g:SrcExpl_winHeight = 11
     else
         let g:SrcExpl_winHeight = 8
     endif
-    " // Set 1 ms for refreshing the Source Explorer                               "
-    let g:SrcExpl_refreshTime = 1
+    " // Set 50 ms for refreshing the Source Explorer                               "
+    let g:SrcExpl_refreshTime = 50
     " // Set "Enter" key to jump into the exact definition context                 "
     let g:SrcExpl_jumpKey = "<ENTER>"
     " // Set "Space" key for back from the definition context                      "
@@ -145,7 +145,7 @@ function! <SID>Trinity_InitSourceExplorer()
     " // Enable/Disable the local definition searching, and note that this is not  "
     " // guaranteed to work, the Source Explorer doesn't check the syntax for now. "
     " // It only searches for a match with the keyword according to command 'gd'   "
-    let g:SrcExpl_searchLocalDef = 1
+    let g:SrcExpl_searchLocalDef = 0
     " // Do not let the Source Explorer update the tags file when opening          "
     let g:SrcExpl_isUpdateTags = 0
     " // Use program 'ctags' with argument '--sort=foldcase -R' to create or       "
@@ -167,7 +167,7 @@ endfunction " }}}
 function! <SID>Trinity_InitNERDTree()
 
     " Set the window width
-    let g:NERDTreeWinSize = 23
+    let g:NERDTreeWinSize = 35
     " Set the window position
     let g:NERDTreeWinPos = "right"
     " Auto centre
