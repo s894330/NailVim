@@ -1,10 +1,13 @@
 "Set mapleader
 let mapleader = ","
 
-"Fast reloading of the .vimrc
-map <silent> <leader>ss :source ~/.vimrc<cr>
+"Set hotkey
+"Esc+s:save file
+map <silent> <Esc>s :w<cr>
+"Esc+q:quit file without save
+map <silent> <Esc>q :Bclose!<cr>
 "Fast editing of .vimrc
-map <silent> <leader>ee :e ~/.vimrc<cr>
+map <silent> <Esc>e :e ~/.vimrc<cr>
 "When .vimrc is edited, reload it
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
@@ -21,6 +24,9 @@ filetype on
 "c: Command-line mode
 "a: All mode
 set mouse=n
+
+"display line number
+set number
 
 "Add full file path to statusline
 set statusline+=%F
@@ -44,7 +50,7 @@ let Tlist_Use_SingleClick = 1
 let NERDTreeMouseMode = 3
 
 "for trinity
-nmap <F8>   :TrinityToggleAll<CR>a
+nmap <F8>   :TrinityToggleAll<CR>
 
 "for command-t
 nnoremap <silent> <Leader>t :CommandT<CR>

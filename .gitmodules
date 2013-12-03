@@ -10,3 +10,6 @@
 [submodule "bundle/autoclose"]
 	path = bundle/autoclose
 	url = git@github.com:Townk/vim-autoclose.git
+[submodule "bundle/butane"]
+	path = bundle/butane
+	url = git@github.com:Soares/butane.vim.git
