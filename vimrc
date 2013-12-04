@@ -4,10 +4,12 @@ let mapleader = ","
 "======  Set general hotkey  ====================
 "save file
 noremap <silent> <C-s> <Esc>:w<CR>
-inoremap <silent> <C-s> <Esc>:w<CR>a
+inoremap <silent> <C-s> <Esc>:w<CR>
 "exit file without save
 noremap <silent> <C-q> <Esc>:Bclose!<CR>
 inoremap <silent> <C-q> <Esc>:Bclose!<CR>
+"past text
+inoremap <silent> <C-p> <Esc>pa
 "undo
 noremap <silent> <C-z> <Esc>u
 inoremap <silent> <C-z> <Esc>ua
@@ -17,6 +19,9 @@ inoremap <silent> <C-a> <Esc><C-r>a
 "toggle line number
 noremap <silent> <C-x> <Esc>:set invnumber<CR>
 inoremap <silent> <C-x> <Esc>:set invnumber<CR>a
+"find file
+noremap <silent> <C-f> <Esc>:cs find 7 
+inoremap <silent> <C-f> <Esc>:cs find 7 
 "================================================
 
 "====== Set general vim property  ===============
@@ -29,7 +34,7 @@ inoremap <silent> <C-x> <Esc>:set invnumber<CR>a
 set mouse=a
 
 "display line number
-set number
+"set number
 
 "Add full file path to statusline
 set statusline+=%F
@@ -39,10 +44,10 @@ set cindent
 
 "disable useless hotkey
 "map j <Left>
-map k <Left>
-map l <Down>
-map ; <Right>
-map o <Up>
+map j <Left>
+map k <Down>
+map l <Right>
+map i <Up>
 "================================================
 
 "for pathogen.vim management
