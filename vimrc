@@ -2,16 +2,21 @@
 let mapleader = ","
 
 "======  Set general hotkey  ====================
-"Esc+z:save file
-map <silent> <Esc>z :w<cr>
-"Esc+x:save file and exit
-map <silent> <Esc>x :Bclose<cr>
-"Esc+q:quit file without save
-map <silent> <Esc>q :Bclose!<cr>
-"Fast editing of .vimrc
-map <silent> <Esc>e :e ~/.vimrc<cr>
-"When .vimrc is edited, reload it
-autocmd! bufwritepost .vimrc source ~/.vimrc
+"save file
+noremap <silent> <C-s> <Esc>:w<CR>
+inoremap <silent> <C-s> <Esc>:w<CR>a
+"exit file without save
+noremap <silent> <C-q> <Esc>:Bclose!<CR>
+inoremap <silent> <C-q> <Esc>:Bclose!<CR>
+"undo
+noremap <silent> <C-z> <Esc>u
+inoremap <silent> <C-z> <Esc>ua
+"redo
+noremap <silent> <C-a> <C-r>
+inoremap <silent> <C-a> <Esc><C-r>a
+"toggle line number
+noremap <silent> <C-x> <Esc>:set invnumber<CR>
+inoremap <silent> <C-x> <Esc>:set invnumber<CR>a
 "================================================
 
 "====== Set general vim property  ===============
@@ -21,7 +26,7 @@ autocmd! bufwritepost .vimrc source ~/.vimrc
 "i: Insert mode
 "c: Command-line mode
 "a: All mode
-set mouse=n
+set mouse=a
 
 "display line number
 set number
@@ -29,29 +34,15 @@ set number
 "Add full file path to statusline
 set statusline+=%F
 
-"set ignorecase when search
-set ignorecase
-
 "set auto indent
 set cindent
 
-map j <Left>
-map k <Down>
-map l <Right>
-map i <Up>
-
-"imap <C-s> <Esc>
-" If the current buffer has never been saved, it will have no name,
-	" call the file browser to save it, otherwise just save it.
-"command -nargs=0 -bar Update if &modified
-"		\|    if empty(bufname('%'))
-"		\|        browse confirm write
-"		\|    else
-"		\|        confirm write
-"		\|    endif
-"		\|endif
-inoremap <silent> <C-s> <Esc>:w<CR>a
-
+"disable useless hotkey
+"map j <Left>
+map k <Left>
+map l <Down>
+map ; <Right>
+map o <Up>
 "================================================
 
 "for pathogen.vim management
