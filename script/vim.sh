@@ -5,7 +5,8 @@
 vim()
 {
     local STTYOPTS="$(stty --save)"
-    stty stop '' -ixoff
+    #stty stop '' -ixoff
+    stty stop '' -ixoff -ixon
     echo "executing file: $@"
     command vim "$@"
     stty "$STTYOPTS"
