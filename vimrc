@@ -3,25 +3,46 @@ let mapleader = ","
 
 "======  Set general hotkey  ====================
 "save file
-noremap <silent> <C-s> <Esc>:w<CR>
-inoremap <silent> <C-s> <Esc>:w<CR>
+nnoremap <silent> <C-s> <Esc>:w<CR>
+inoremap <silent> <C-s> <Esc>:w<CR>a
 "exit file without save
-noremap <silent> <C-q> <Esc>:Bclose!<CR>
+nnoremap <silent> <C-q> <Esc>:Bclose!<CR>
 inoremap <silent> <C-q> <Esc>:Bclose!<CR>
+"copy one line text
+nnoremap <silent> <C-c> <Esc>"*yy
+inoremap <silent> <C-c> <Esc>"*yy
+vnoremap <silent> <C-c> "*y
 "past text
-inoremap <silent> <C-p> <Esc>pa
+nnoremap <silent> <C-v> <Esc>"*p<Esc>
+inoremap <silent> <C-v> <Esc>"*p<Esc>a<Left>
+"delete one line text
+nnoremap <silent> <C-d> <Esc>dd
+inoremap <silent> <C-d> <Esc>dda
+"reload file anyway
+nnoremap <silent> <F5> <Esc>:e!<CR>
+inoremap <silent> <F5> <Esc>:e!<CR>
 "undo
-noremap <silent> <C-z> <Esc>u
-inoremap <silent> <C-z> <Esc>ua
+nnoremap <silent> <C-z> <Esc>u
+inoremap <silent> <C-z> <Esc>u
 "redo
-noremap <silent> <C-a> <C-r>
-inoremap <silent> <C-a> <Esc><C-r>a
+nnoremap <silent> <C-a> <C-R>
+inoremap <silent> <C-a> <Esc><C-R>
 "toggle line number
-noremap <silent> <C-x> <Esc>:set invnumber<CR>
-inoremap <silent> <C-x> <Esc>:set invnumber<CR>a
+nnoremap <silent> <C-x> <Esc>:set invnumber<CR>
+inoremap <silent> <C-x> <Esc>:set invnumber<CR>
+"enable enter in normal mode
+nnoremap <silent> <CR> <Esc>i<CR><Esc>
+"enable backspace in normal mode
+"nnoremap <silent> <Backspace> <Esc>i<Backspace><Esc><Right>
+"enable space in normal mode
+"nnoremap <silent> <Space> <Esc>i<Space><Esc><Right>
+"enable <tab> in normal mode
+nnoremap <silent> <Tab> i<Tab><Esc>
 "find file
-noremap <silent> <C-f> <Esc>:cs find 7 
+nnoremap <silent> <C-f> <Esc>:cs find 7 
 inoremap <silent> <C-f> <Esc>:cs find 7 
+"reload vimrc
+nnoremap <silent> rr <Esc>:so $MYVIMRC<CR>
 "================================================
 
 "====== Set general vim property  ===============
@@ -43,11 +64,10 @@ set statusline+=%F
 set cindent
 
 "disable useless hotkey
-"map j <Left>
-map j <Left>
-map k <Down>
-map l <Right>
-map i <Up>
+map k <Left>
+map l <Down>
+map ; <Right>
+map o <Up>
 "================================================
 
 "for pathogen.vim management
@@ -75,7 +95,7 @@ let Tlist_Use_SingleClick = 1
 let NERDTreeMouseMode = 3
 
 "for trinity
-nnoremap <F8>   :TrinityToggleAll<CR>
+nnoremap <silent> <F8>   :TrinityToggleAll<CR>
 
 "for command-t
 nnoremap <silent> <Leader>t :CommandT<CR>
