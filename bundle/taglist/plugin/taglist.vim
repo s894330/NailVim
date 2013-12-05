@@ -2275,7 +2275,8 @@ function! s:Tlist_Parse_Tagline(tag_line)
         if g:Tlist_Display_Tag_Scope
             let tag_scope = s:Tlist_Get_Tag_Scope(s:fidx, s:tidx)
             if tag_scope != ''
-                let ttxt = ttxt . ' [' . tag_scope . ']'
+                "let ttxt = ttxt . ' [' . tag_scope . ']'
+                let ttxt = ttxt . ' '
             endif
         endif
     endif
