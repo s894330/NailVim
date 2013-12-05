@@ -8,10 +8,12 @@ inoremap <silent> <C-s> <Esc>:w<CR>a
 "exit file without save
 nnoremap <silent> <C-q> <Esc>:Bclose!<CR>
 inoremap <silent> <C-q> <Esc>:Bclose!<CR>
-"copy one line text
+"copy text
 nnoremap <silent> <C-c> <Esc>"*yy
 inoremap <silent> <C-c> <Esc>"*yy
 vnoremap <silent> <C-c> "*y
+"cut text
+vnoremap <silent> <C-x> "*d
 "past text
 nnoremap <silent> <C-v> <Esc>"*p<Esc>
 inoremap <silent> <C-v> <Esc>"*p<Esc>a<Left>
@@ -28,16 +30,18 @@ inoremap <silent> <C-z> <Esc>u
 nnoremap <silent> <C-a> <C-R>
 inoremap <silent> <C-a> <Esc><C-R>
 "toggle line number
-nnoremap <silent> <C-x> <Esc>:set invnumber<CR>
-inoremap <silent> <C-x> <Esc>:set invnumber<CR>
+nnoremap <silent> <C-w> <Esc>:set invnumber<CR>
+inoremap <silent> <C-w> <Esc>:set invnumber<CR>
 "enable enter in normal mode
 nnoremap <silent> <CR> <Esc>i<CR><Esc>
 "enable backspace in normal mode
-"nnoremap <silent> <Backspace> <Esc>i<Backspace><Esc><Right>
-"enable space in normal mode
-"nnoremap <silent> <Space> <Esc>i<Space><Esc><Right>
+nnoremap <silent> <Backspace> <Esc>i<Backspace><Esc><Right>
 "enable <tab> in normal mode
-nnoremap <silent> <Tab> i<Tab><Esc>
+nnoremap <silent> <Tab> <Esc>:><CR>
+nnoremap <silent> <S-Tab> <Esc>:<<CR>
+inoremap <silent> <S-Tab> <Esc>:<<CR>i
+vnoremap <silent> <Tab> >
+vnoremap <silent> <S-Tab> <
 "find file
 nnoremap <silent> <C-f> <Esc>:cs find 7 
 inoremap <silent> <C-f> <Esc>:cs find 7 
