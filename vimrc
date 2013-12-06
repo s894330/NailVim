@@ -67,6 +67,9 @@ set statusline+=%F
 "set auto indent
 set cindent
 
+"load color scheme
+colorscheme nail-color
+
 "disable useless hotkey
 map k <Left>
 map l <Down>
