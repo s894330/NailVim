@@ -1,4 +1,5 @@
 " Vim color file
+" copy from peachpuff.vim
 " Maintainer: David Ne\v{c}as (Yeti) <yeti@physics.muni.cz>
 " Last Change: 2003-04-23
 " URL: http://trific.ath.cx/Ftp/vim/colors/peachpuff.vim
@@ -49,20 +50,12 @@ hi lCursor guifg=bg guibg=fg
 " Colors for syntax highlighting
 hi Comment term=bold ctermfg=4 guifg=#406090
 hi Constant term=underline ctermfg=1 guifg=#c00058
-hi Special term=bold ctermfg=1 guifg=SlateBlue
+hi Special term=bold ctermfg=5 guifg=SlateBlue
 hi Identifier term=underline ctermfg=6 guifg=DarkCyan
 hi Statement term=bold ctermfg=3 gui=bold guifg=Brown
-hi PreProc term=underline ctermfg=6 guifg=Magenta3
+hi PreProc term=underline ctermfg=5 guifg=Magenta3
 hi Type term=underline ctermfg=2 gui=bold guifg=SeaGreen
 hi Ignore cterm=bold ctermfg=7 guifg=bg
 hi Error term=reverse cterm=bold ctermfg=7 ctermbg=1 gui=bold guifg=White guibg=Red
 hi Todo term=standout ctermfg=0 ctermbg=3 guifg=Blue guibg=Yellow
 
-" added by nail
-hi Statement 	term=underline ctermfg=2 	gui=bold guifg=SeaGreen
-hi Label 		term=underline ctermfg=2 	gui=bold guifg=SeaGreen
-hi Conditional 	term=underline ctermfg=2 	gui=bold guifg=SeaGreen
-hi Repeat 		term=underline ctermfg=2 	gui=bold guifg=SeaGreen
-hi Number 		term=underline ctermfg=15 	gui=bold guifg=SeaGreen
-hi Todo 		term=underline ctermfg=15 	ctermbg=1 gui=bold guifg=SeaGreen
-hi cFormat      term=underline ctermfg=1    gui=bold guifg=SeaGreen
