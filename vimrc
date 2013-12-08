@@ -42,6 +42,9 @@ nnoremap <silent> <S-Tab> <Esc>:<<CR>
 inoremap <silent> <S-Tab> <Esc>:<<CR>i
 vnoremap <silent> <Tab> >
 vnoremap <silent> <S-Tab> <
+"enable shift+End=select
+nnoremap <silent> <S-e> <Esc>v<End>
+inoremap <silent> <S-e> <Esc><Right>v<End>
 "find file
 nnoremap <silent> <C-f> <Esc>:cs find 7 
 inoremap <silent> <C-f> <Esc>:cs find 7 
