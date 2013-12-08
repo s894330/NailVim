@@ -47,6 +47,9 @@ nnoremap <silent> <C-f> <Esc>:cs find 7
 inoremap <silent> <C-f> <Esc>:cs find 7 
 "reload vimrc
 nnoremap <silent> rr <Esc>:so $MYVIMRC<CR>
+"auto make and run
+nnoremap <silent> <C-k> <Esc>:w!<CR>:!clear && make && ./a.out<CR>
+inoremap <silent> <C-k> <Esc>:w!<CR>:!clear && make && ./a.out<CR>
 "================================================
 
 "====== Set general vim property  ===============
