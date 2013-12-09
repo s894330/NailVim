@@ -42,12 +42,16 @@ nnoremap <silent> <S-Tab> <Esc>:<<CR>
 inoremap <silent> <S-Tab> <Esc>:<<CR>i
 vnoremap <silent> <Tab> >
 vnoremap <silent> <S-Tab> <
-"enable shift+End=select
-nnoremap <silent> <S-e> <Esc>v<End>
-inoremap <silent> <S-e> <Esc><Right>v<End>
+"enable ctrl+End=select
+nnoremap <silent> <C-e> <Esc>v<End>
+inoremap <silent> <C-e> <Esc><Right>v<End>
 "find file
 nnoremap <silent> <C-f> <Esc>:cs find 7 
 inoremap <silent> <C-f> <Esc>:cs find 7 
+vnoremap <silent> <C-f> <Esc>:cs find 7
+"1 maps to line head, 0 maps to line tail
+nnoremap <silent> 1 0
+nnoremap <silent> 0 $
 "reload vimrc
 nnoremap <silent> rr <Esc>:so $MYVIMRC<CR>
 "auto make and run
