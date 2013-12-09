@@ -10,7 +10,7 @@ nnoremap <silent> <C-q> <Esc>:Bclose!<CR>
 inoremap <silent> <C-q> <Esc>:Bclose!<CR>
 "copy text
 nnoremap <silent> <C-c> <Esc>"*yy
-inoremap <silent> <C-c> <Esc>"*yy
+inoremap <silent> <C-c> <Esc>"*yya
 vnoremap <silent> <C-c> "*y
 "cut text
 vnoremap <silent> <C-x> "*d
@@ -75,6 +75,9 @@ set cindent
 
 "load color scheme
 colorscheme nail-color
+
+"expand tab in source code
+autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.java set shiftwidth=4 | set expandtab
 
 "disable useless hotkey
 map k <Left>
