@@ -10,3 +10,6 @@
 [submodule "bundle/butane"]
 	path = bundle/butane
 	url = git@github.com:Soares/butane.vim.git
+[submodule "bundle/tComment"]
+	path = bundle/tComment
+	url = git@github.com:vim-scripts/tComment.git

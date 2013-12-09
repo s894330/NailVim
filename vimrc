@@ -52,6 +52,11 @@ vnoremap <silent> <C-f> <Esc>:cs find 7
 "1 maps to line head, 0 maps to line tail
 nnoremap <silent> 1 0
 nnoremap <silent> 0 $
+"for tComment
+"let g:tcommentMapLeader1='<C-_>'
+nnoremap <silent> <C-b> <Esc>:TComment<CR>
+inoremap <silent> <C-b> <Esc>:TComment<CR>i
+vnoremap <silent> <C-b> :TComment<CR>
 "reload vimrc
 nnoremap <silent> rr <Esc>:so $MYVIMRC<CR>
 "auto make and run
