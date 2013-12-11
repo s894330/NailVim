@@ -1,8 +1,8 @@
 
 " Le mapping des touches
-nnoremap <silent> <C-b>       mZ:call ToggleComment_toggle()<CR>`Z
-inoremap <silent> <C-b>       <Esc>mZ:call ToggleComment_toggle()<CR>`Zi
-vnoremap <silent> <C-b>       mZ:call ToggleComment_toggle()<CR>`Z
+"nnoremap <silent> <C-b>       mZ:call ToggleComment_toggle()<CR>`Z
+"inoremap <silent> <C-b>       <Esc>mZ:call ToggleComment_toggle()<CR>`Zi
+"vnoremap <silent> <C-b>       mZ:call ToggleComment_toggle()<CR>`Z
 "map <silent> <S-q>   mZ:call ToggleComment_comment()<CR>`Z
 "map <silent> <A-q>   mZ:call ToggleComment_uncomment()<CR>`Z
 
