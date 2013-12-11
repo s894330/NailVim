@@ -25,7 +25,7 @@ nnoremap <silent> <F5> <Esc>:e!<CR>
 inoremap <silent> <F5> <Esc>:e!<CR>
 "undo
 nnoremap <silent> <C-z> <Esc>u
-inoremap <silent> <C-z> <Esc>u
+inoremap <silent> <C-z> <Esc>ui
 "redo
 nnoremap <silent> <C-a> <C-R>
 inoremap <silent> <C-a> <Esc><C-R>
@@ -54,9 +54,9 @@ nnoremap <silent> 1 0
 nnoremap <silent> 0 $
 "for tComment
 "let g:tcommentMapLeader1='<C-_>'
-nnoremap <silent> <C-b> <Esc>:TComment<CR>
-inoremap <silent> <C-b> <Esc>:TComment<CR>i
-vnoremap <silent> <C-b> :TComment<CR>
+"nnoremap <silent> <C-b> <Esc>:TComment<CR>
+"inoremap <silent> <C-b> <Esc>:TComment<CR>i
+"vnoremap <silent> <C-b> :TComment<CR>
 "reload vimrc
 nnoremap <silent> rr <Esc>:so $MYVIMRC<CR>
 "auto make and run
@@ -83,6 +83,7 @@ set statusline+=%F
 set cindent
 
 "load color scheme
+set t_Co=256
 colorscheme nail-color
 
 "expand tab in source code

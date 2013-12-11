@@ -48,7 +48,7 @@ hi Cursor guifg=bg guibg=fg
 hi lCursor guifg=bg guibg=fg
 
 " Colors for syntax highlighting
-hi Comment term=bold ctermfg=6 guifg=#406090
+hi Comment term=bold ctermfg=12 guifg=#406090
 hi Constant term=underline ctermfg=9 guifg=#c00058
 hi Special term=bold ctermfg=13 guifg=SlateBlue
 hi Identifier term=underline ctermfg=6 guifg=DarkCyan
