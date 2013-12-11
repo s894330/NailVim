@@ -15,17 +15,16 @@ hi clear
 if exists("syntax_on")
   syntax reset
 endif
-
-let colors_name = "nail-color"
+let g:colors_name = "nail-color"
 
 hi Normal guibg=PeachPuff guifg=Black
 
 hi SpecialKey term=bold ctermfg=4 guifg=Blue
 hi NonText term=bold cterm=bold ctermfg=4 gui=bold guifg=Blue
-hi Directory term=bold ctermfg=4 guifg=Blue
+hi Directory term=bold ctermfg=12 guifg=Blue
 hi ErrorMsg term=standout cterm=bold ctermfg=7 ctermbg=1 gui=bold guifg=White guibg=Red
 hi IncSearch term=reverse cterm=reverse gui=reverse
-hi Search term=reverse ctermbg=3 guibg=Gold2
+hi Search term=reverse ctermbg=5 guibg=Gold2
 hi MoreMsg term=bold ctermfg=2 gui=bold guifg=SeaGreen
 hi ModeMsg term=bold cterm=bold gui=bold
 hi LineNr term=underline ctermfg=3 guifg=Red3
@@ -33,8 +32,8 @@ hi Question term=standout ctermfg=2 gui=bold guifg=SeaGreen
 hi StatusLine term=bold,reverse cterm=bold,reverse gui=bold guifg=White guibg=Black
 hi StatusLineNC term=reverse cterm=reverse gui=bold guifg=PeachPuff guibg=Gray45
 hi VertSplit term=reverse cterm=reverse gui=bold guifg=White guibg=Gray45
-hi Title term=bold ctermfg=5 gui=bold guifg=DeepPink3
-hi Visual term=reverse cterm=reverse gui=reverse guifg=Grey80 guibg=fg
+hi Title term=bold ctermfg=3 gui=bold guifg=DeepPink3
+hi Visual ctermbg=NONE	   cterm=reverse gui=reverse guifg=Grey guibg=fg
 hi VisualNOS term=bold,underline cterm=bold,underline gui=bold,underline
 hi WarningMsg term=standout ctermfg=1 gui=bold guifg=Red
 hi WildMenu term=standout ctermfg=0 ctermbg=3 guifg=Black guibg=Yellow
