@@ -48,7 +48,7 @@ endif
 " User interface for switching all the three plugins
 
 command! -nargs=0 -bar TrinityToggleAll
-    \ call <SID>Trinity_Toggle()
+    \ call Trinity_Toggle()
 
 " User interface for switching the TagList
 
@@ -441,8 +441,8 @@ endfunction " }}}
 " The User Interface function to open / close the Trinity of
 " TagList, Source Explorer and NERD tree
 
-function! <SID>Trinity_Toggle()
-
+function! Trinity_Toggle()
+    call Nail_trinity_toggle()
     if s:Trinity_tabPage == 0
         let s:Trinity_tabPage = tabpagenr()
     endif

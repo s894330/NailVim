@@ -8,6 +8,9 @@ inoremap <silent> <C-s> <Esc>:w<CR>a
 "exit file without save
 nnoremap <silent> <C-q> <Esc>:Bclose!<CR>
 inoremap <silent> <C-q> <Esc>:Bclose!<CR>
+"exit vi and discard all change
+nnoremap <silent> <F2> :ExitAll<CR>
+inoremap <silent> <F2> <Esc>:ExitAll<CR>
 "copy text
 nnoremap <silent> <C-c> <Esc>"*yy
 inoremap <silent> <C-c> <Esc>"*yya
@@ -56,8 +59,6 @@ nnoremap <silent> 0 $
 nnoremap <silent> <C-b>       mZ:call ToggleComment_toggle()<CR>`Z
 inoremap <silent> <C-b>       <Esc>mZ:call ToggleComment_toggle()<CR>`Zi
 vnoremap <silent> <C-b>       mZ:call ToggleComment_toggle()<CR>`Z
-"reload vimrc
-nnoremap <silent> rr <Esc>:so $MYVIMRC<CR>
 "auto make and run
 nnoremap <silent> <C-k> <Esc>:w!<CR>:!clear && make && ./a.out<CR>
 inoremap <silent> <C-k> <Esc>:w!<CR>:!clear && make && ./a.out<CR>
