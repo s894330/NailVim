@@ -12,14 +12,15 @@ inoremap <silent> <C-q> <Esc>:Bclose!<CR>
 nnoremap <silent> <F2> :ExitAll<CR>
 inoremap <silent> <F2> <Esc>:ExitAll<CR>
 "copy text
-nnoremap <silent> <C-c> "*yy
-inoremap <silent> <C-c> <Esc>"*yya
-vnoremap <silent> <C-c> "*y
+nnoremap <silent> <C-c> "+yy
+inoremap <silent> <C-c> <Esc>"+yya
+vnoremap <silent> <C-c> "+y
 "cut text
-vnoremap <silent> <C-x> "*d
+vnoremap <silent> <C-x> "+d
 "past text
-nnoremap <silent> <C-v> "*p<Esc>
-inoremap <silent> <C-v> <Esc>"*p<Esc>a<Left>
+nnoremap <silent> <C-v> "+p<Esc>
+inoremap <silent> <C-v> <Esc>"+p<Esc>a<Left>
+vnoremap <silent> <C-v> "+p
 "delete one line text
 nnoremap <silent> <C-d> dd
 inoremap <silent> <C-d> <Esc>dda
@@ -29,6 +30,7 @@ inoremap <silent> <F5> <Esc>:e!<CR>
 "undo
 nnoremap <silent> <C-z> u
 inoremap <silent> <C-z> <Esc>ui
+vnoremap <silent> <C-z> ui
 "redo
 nnoremap <silent> <C-a> <C-R>
 inoremap <silent> <C-a> <Esc><C-R>
