@@ -3,53 +3,58 @@ let mapleader = ","
 
 "======  Set general hotkey  ====================
 "save file
-nnoremap <silent> <C-s> <Esc>:w<CR>
+nnoremap <silent> <C-s> :w<CR>
 inoremap <silent> <C-s> <Esc>:w<CR>a
 "exit file without save
-nnoremap <silent> <C-q> <Esc>:Bclose!<CR>
+nnoremap <silent> <C-q> :Bclose!<CR>
 inoremap <silent> <C-q> <Esc>:Bclose!<CR>
 "exit vi and discard all change
 nnoremap <silent> <F2> :ExitAll<CR>
 inoremap <silent> <F2> <Esc>:ExitAll<CR>
 "copy text
-nnoremap <silent> <C-c> <Esc>"*yy
+nnoremap <silent> <C-c> "*yy
 inoremap <silent> <C-c> <Esc>"*yya
 vnoremap <silent> <C-c> "*y
 "cut text
 vnoremap <silent> <C-x> "*d
 "past text
-nnoremap <silent> <C-v> <Esc>"*p<Esc>
+nnoremap <silent> <C-v> "*p<Esc>
 inoremap <silent> <C-v> <Esc>"*p<Esc>a<Left>
 "delete one line text
-nnoremap <silent> <C-d> <Esc>dd
+nnoremap <silent> <C-d> dd
 inoremap <silent> <C-d> <Esc>dda
 "reload file anyway
-nnoremap <silent> <F5> <Esc>:e!<CR>
+nnoremap <silent> <F5> :e!<CR>
 inoremap <silent> <F5> <Esc>:e!<CR>
 "undo
-nnoremap <silent> <C-z> <Esc>u
+nnoremap <silent> <C-z> u
 inoremap <silent> <C-z> <Esc>ui
 "redo
 nnoremap <silent> <C-a> <C-R>
 inoremap <silent> <C-a> <Esc><C-R>
 "toggle line number
-nnoremap <silent> <C-w> <Esc>:set invnumber<CR>
+nnoremap <silent> <C-w> :set invnumber<CR>
 inoremap <silent> <C-w> <Esc>:set invnumber<CR>
 "enable enter in normal mode
-nnoremap <silent> <CR> <Esc>i<CR><Esc>
+nnoremap <silent> <CR> i<CR><Esc>
 "enable backspace in normal mode
-nnoremap <silent> <Backspace> <Esc>i<Backspace><Esc><Right>
+nnoremap <silent> <Backspace> i<Backspace><Esc><Right>
 "enable <tab> in normal mode
-nnoremap <silent> <Tab> <Esc>:><CR>
-nnoremap <silent> <S-Tab> <Esc>:<<CR>
+nnoremap <silent> <Tab> :><CR>
+nnoremap <silent> <S-Tab> :<<CR>
 inoremap <silent> <S-Tab> <Esc>:<<CR>i
 vnoremap <silent> <Tab> >
 vnoremap <silent> <S-Tab> <
+"switch buffer
+nnoremap <silent> <C-Right> :bn<CR>
+inoremap <silent> <C-Right> <Esc>:bn<CR>
+nnoremap <silent> <C-Left> :bp<CR>
+inoremap <silent> <C-Left> <Esc>:bp<CR>
 "enable ctrl+End=select
-nnoremap <silent> <C-e> <Esc>v<End>
+nnoremap <silent> <C-e> v<End>
 inoremap <silent> <C-e> <Esc><Right>v<End>
 "find file
-nnoremap <silent> <C-f> <Esc>:cs find 7 
+nnoremap <silent> <C-f> :cs find 7 
 inoremap <silent> <C-f> <Esc>:cs find 7 
 vnoremap <silent> <C-f> <Esc>:cs find 7
 "1 maps to line head, 0 maps to line tail
@@ -60,7 +65,7 @@ nnoremap <silent> <C-b>       mZ:call ToggleComment_toggle()<CR>`Z
 inoremap <silent> <C-b>       <Esc>mZ:call ToggleComment_toggle()<CR>`Zi
 vnoremap <silent> <C-b>       mZ:call ToggleComment_toggle()<CR>`Z
 "auto make and run
-nnoremap <silent> <C-k> <Esc>:w!<CR>:!clear && make && ./a.out<CR>
+nnoremap <silent> <C-k> :w!<CR>:!clear && make && ./a.out<CR>
 inoremap <silent> <C-k> <Esc>:w!<CR>:!clear && make && ./a.out<CR>
 "================================================
 
