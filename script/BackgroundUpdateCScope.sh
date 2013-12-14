@@ -7,7 +7,7 @@ errFile="errMsg"
 # check if cscope.out is exist
 if [ -f $cscopeFile ]; then
 	while true ; do
-		sleep 60
+		sleep 45
 		stat1=$(stat -c %y $cscopeFile)		
 		cscope -bCkR >/dev/null 2>&1
 		stat2=$(stat -c %y $cscopeFile)		
