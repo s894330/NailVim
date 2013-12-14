@@ -93,6 +93,9 @@ set cindent
 set t_Co=256
 colorscheme nail-color
 
+"for cscope syntax color
+highlight ModeMsg ctermfg=12
+
 "expand tab in source code
 autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.java set shiftwidth=4 | set expandtab
 
