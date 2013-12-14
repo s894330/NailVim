@@ -34,3 +34,10 @@ function! Nail_Exit_All()
 		execute "q!"
 	endif
 endfunction
+
+function! ResetCscope()
+	cscope reset
+endfunction
+
+function! Echo()	
+endfunction
