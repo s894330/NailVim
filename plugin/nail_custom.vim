@@ -41,3 +41,27 @@ endfunction
 
 function! Echo()	
 endfunction
+
+function! CheckProject()
+	if filereadable($PWD . "/cscope.out")	" this is project directory		
+		call Trinity_Toggle()
+		normal! zz	" center the screen
+	endif
+endfunction
+
+function! SaveVimSession()
+	if filereadable($PWD . "/cscope.out")	" this is project directory		
+		if (!isdirectory($PWD . "/.vimSession"))
+			call mkdir($PWD . "/.vimSession")
+		endif
+		execute "mksession! " . $PWD . "/.vimSession/Session.vim"
+	endif
+endfunction
+
+function! LoadVimSession()
+	if filereadable($PWD . "/cscope.out")	" this is project directory		
+		if argc() == 0 && filereadable($PWD . "/.vimSession/Session.vim")
+			execute "source " . $PWD . "/.vimSession/Session.vim"
+		endif
+	endif
+endfunction
