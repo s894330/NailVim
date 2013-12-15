@@ -113,27 +113,17 @@ autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.java set shiftwidth=4 | set expandtab
 "================================================
 
 " Go to last file(s) if invoked without arguments.
-autocmd VimLeave * call SaveVimSession()
 autocmd VimEnter * call LoadVimSession()
 autocmd VimEnter * call CheckProject()
+autocmd VimEnter * call LoadCscope()
+
+autocmd VimLeave * call SaveVimSession()
 
 "for pathogen.vim management
 execute pathogen#infect()
 
 "for taglist
 filetype on
-
-"for cscope database connect
-function! LoadCscope()
-  let db = findfile("cscope.out", ".;")
-  if (!empty(db))
-    let path = strpart(db, 0, match(db, "/cscope.out$"))
-    set nocscopeverbose " suppress 'duplicate connection' error
-    exe "cs add " . db . " " . path
-    set cscopeverbose
-  endif
-endfunction
-au BufEnter /* call LoadCscope()
 
 "for taglist
 let Tlist_Use_SingleClick = 1
