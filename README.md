@@ -15,22 +15,7 @@ Installation:
     4. ./NailVim/script/install.sh
     5. source ~/.bashrc
 
-    
-    mv NailVim ~/.vim
-    rm -rf ~/.vimrc
-
-Create symlinks:
-
-    ln -s ~/.vim/vimrc ~/.vimrc
-    ln -s ~/.vim/gvimrc ~/.gvimrc
-
-Switch to the `~/.vim` directory, and fetch submodules:
-
-    cd ~/.vim
-    git submodule init
-    git submodule update
-
-Note:
-List of plugins which not controlled by git submodule:
-    taglist -- added at 2013/12/1 by Nail
-    trinity -- added at 2013/12/1 by Nail
+Usage:
+	1. go into project root path
+	2. type "gencscopectag" to generate database (one project doing once)
+	3. type "vi" to start use
