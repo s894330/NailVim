@@ -17,7 +17,7 @@ tar -xf zipFile/bundle.tar.bz2
 cd ..
 
 # setup ~/.vim
-cp $nailVim ~/.vim
+cp -a $nailVim ~/.vim
 
 # setup ~/.vimrc
 ln -s ~/.vim/vimrc ~/.vimrc
