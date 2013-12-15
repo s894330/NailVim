@@ -2,6 +2,7 @@
 let mapleader = ","
 
 "======  Set general hotkey  ====================
+"== file operation ==
 "save file
 nnoremap <silent> <C-s> :w<CR>
 inoremap <silent> <C-s> <Esc>:w<CR>a
@@ -11,6 +12,22 @@ inoremap <silent> <C-q> <Esc>:Bclose!<CR>
 "exit vi and discard all change
 nnoremap <silent> <F2> :ExitAll<CR>
 inoremap <silent> <F2> <Esc>:ExitAll<CR>
+"reload file anyway
+nnoremap <silent> <F5> :e!<CR>
+inoremap <silent> <F5> <Esc>:e!<CR>
+
+"== file navigate operation ==
+"switch buffer
+nnoremap <silent> <C-Right> :bn<CR>
+inoremap <silent> <C-Right> <Esc>:bn<CR>
+nnoremap <silent> <C-Left> :bp<CR>
+inoremap <silent> <C-Left> <Esc>:bp<CR>
+"find file
+nnoremap <silent> <C-f> :cs find 7 
+inoremap <silent> <C-f> <Esc>:cs find 7 
+vnoremap <silent> <C-f> <Esc>:cs find 7
+
+"== text operation ==
 "copy text
 nnoremap <silent> <C-c> "+yy
 inoremap <silent> <C-c> <Esc>"+yya
@@ -24,9 +41,6 @@ vnoremap <silent> <C-v> "+p
 "delete one line text
 nnoremap <silent> <C-d> dd
 inoremap <silent> <C-d> <Esc>dda
-"reload file anyway
-nnoremap <silent> <F5> :e!<CR>
-inoremap <silent> <F5> <Esc>:e!<CR>
 "undo
 nnoremap <silent> <C-z> u
 inoremap <silent> <C-z> <Esc>ui
@@ -34,34 +48,35 @@ vnoremap <silent> <C-z> ui
 "redo
 nnoremap <silent> <C-a> <C-R>
 inoremap <silent> <C-a> <Esc><C-R>
+"enable ctrl+End=select
+nnoremap <silent> <C-e> v<End>
+inoremap <silent> <C-e> <Esc><Right>v<End>
+
+"== text movement operation ==
+"move cursor to the end
+nnoremap <silent> w<End> <End>a
+"enable enter in normal mode
+nnoremap <silent> <Enter><Enter> i<CR>
+"enable backspace in normal mode
+nnoremap <silent> <Backspace> i<Backspace>
+"enable space in normal mode
+nnoremap <silent> w<Space> i<Space>
+"1 maps to line head, 0 maps to line tail
+nnoremap <silent> 1 0
+nnoremap <silent> 0 $
+
+"== format file operation ==
 "toggle line number
 nnoremap <silent> <C-w> :set invnumber<CR>
 inoremap <silent> <C-w> <Esc>:set invnumber<CR>
-"enable enter in normal mode
-nnoremap <silent> <CR> i<CR><Esc>
-"enable backspace in normal mode
-nnoremap <silent> <Backspace> i<Backspace><Esc><Right>
 "enable <tab> in normal mode
 nnoremap <silent> <Tab> :><CR>
 nnoremap <silent> <S-Tab> :<<CR>
 inoremap <silent> <S-Tab> <Esc>:<<CR>i
 vnoremap <silent> <Tab> >
 vnoremap <silent> <S-Tab> <
-"switch buffer
-nnoremap <silent> <C-Right> :bn<CR>
-inoremap <silent> <C-Right> <Esc>:bn<CR>
-nnoremap <silent> <C-Left> :bp<CR>
-inoremap <silent> <C-Left> <Esc>:bp<CR>
-"enable ctrl+End=select
-nnoremap <silent> <C-e> v<End>
-inoremap <silent> <C-e> <Esc><Right>v<End>
-"find file
-nnoremap <silent> <C-f> :cs find 7 
-inoremap <silent> <C-f> <Esc>:cs find 7 
-vnoremap <silent> <C-f> <Esc>:cs find 7
-"1 maps to line head, 0 maps to line tail
-nnoremap <silent> 1 0
-nnoremap <silent> 0 $
+
+"== programming operation ==
 "for toggleComment
 nnoremap <silent> <C-b>       mZ:call ToggleComment_toggle()<CR>`Z
 inoremap <silent> <C-b>       <Esc>mZ:call ToggleComment_toggle()<CR>`Zi
@@ -84,7 +99,7 @@ set mouse=a
 "set number
 
 "Add full file path to statusline
-set statusline+=%F
+set statusline=%F
 
 "set auto indent
 set cindent
@@ -93,17 +108,8 @@ set cindent
 set t_Co=256
 colorscheme nail-color
 
-"for cscope syntax color
-highlight ModeMsg ctermfg=12
-
 "expand tab in source code
 autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.java set shiftwidth=4 | set expandtab
-
-"disable useless hotkey
-map k <Left>
-map l <Down>
-map ; <Right>
-map o <Up>
 "================================================
 
 " Go to last file(s) if invoked without arguments.
@@ -141,8 +147,3 @@ let NERDTreeMouseMode = 3
 
 "for trinity
 nnoremap <silent> <F8>   :TrinityToggleAll<CR>
-
-"for command-t
-nnoremap <silent> <Leader>t :CommandT<CR>
-let g:CommandTCancelMap='<C-d>'
-let g:CommandTMaxCachedDirectories=0

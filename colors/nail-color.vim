@@ -26,7 +26,7 @@ hi ErrorMsg term=standout cterm=bold ctermfg=7 ctermbg=1 gui=bold guifg=White gu
 hi IncSearch term=reverse cterm=reverse gui=reverse
 hi Search term=reverse ctermbg=5 guibg=Gold2
 hi MoreMsg term=bold ctermfg=2 gui=bold guifg=SeaGreen
-hi ModeMsg term=bold cterm=bold gui=bold
+hi ModeMsg term=bold cterm=bold ctermfg=12 gui=bold
 hi LineNr term=underline ctermfg=3 guifg=Red3
 hi Question term=standout ctermfg=2 gui=bold guifg=SeaGreen
 hi StatusLine term=bold,reverse cterm=bold,reverse gui=bold guifg=White guibg=Black
