@@ -7,6 +7,8 @@
 myDIR=$(dirname $(readlink -f $0))
 source $myDIR/variable.sh
 
+ServerID="VIM"
+
 # check if cscope.out is exist
 if [ -f $cscopeFile ]; then	# this is a project folder
 	if [ -f $errFile ]; then	# there is other vim occupy this project
