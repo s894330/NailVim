@@ -11,8 +11,7 @@ Tested OS:
 Installation:
 	1. sudo apt-get install vim cscope git
     2. git clone https://github.com/s894330/NailVim.git
-    3. cd NailVim
-    4. ./script/install.sh
+    3. ./NailVim/script/install.sh
 
     
     mv NailVim ~/.vim
