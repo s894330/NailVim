@@ -1,14 +1,20 @@
 NailVim
 =======
 
-Vim config used by Nail
+Purpose:
+    1. let vim become a powerful editor
 
-Important:
-    before you follow the installation steps, backup ~/.vimrc, ~/.vim first
+Tested OS:
+	1. Ubuntu 11.10 64bit
+	2. Ubutnu 12.04.3 64 bit
 
 Installation:
+	1. sudo apt-get install vim cscope git
+    2. git clone https://github.com/s894330/NailVim.git
+    3. cd NailVim
+    4. ./script/install.sh
 
-    git clone git@github.com:s894330/NailVim.git
+    
     mv NailVim ~/.vim
     rm -rf ~/.vimrc
 
