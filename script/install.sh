@@ -7,8 +7,13 @@ nailVim=NailVim
 echo -n "Setup vim..."
 
 # backup user original setting first
-cp ~/.vimrc ~/.vimrc_backup
-cp ~/.vim ~/.vim_backup
+if [ -f ~/.vimrc ]; then
+	cp ~/.vimrc ~/.vimrc_backup
+fi
+
+if [ -d ~/.vim ]; then
+	cp -a ~/.vim ~/.vim_backup
+fi
 rm -rf ~/.vimrc ~/.vim
 
 # extract bundle files
@@ -23,10 +28,15 @@ cp -a $nailVim ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 
 # setup ~/.bin
-mkdir ~/.bin
-ln -s ~/.vim/script/vim.sh ~/.bin/vim.sh
-ln -s ~/.vim/script/BackgroundUpdateCScope.sh ~/.bin/BackgroundUpdateCScope.sh
-ln -s ~/.vim/script/gencscopectag ~/.bin/gencscopectag
+if [ ! -d ~/.bin ]; then
+	mkdir ~/.bin
+fi
+
+if [ ! -L ~/.bin/vim.sh ]; then
+	ln -s ~/.vim/script/vim.sh ~/.bin/vim.sh
+	ln -s ~/.vim/script/BackgroundUpdateCScope.sh ~/.bin/BackgroundUpdateCScope.sh
+	ln -s ~/.vim/script/gencscopectag ~/.bin/gencscopectag
+fi
 
 # setup ~/.bashrc
 cat $nailVim/script/alias >> ~/.bashrc

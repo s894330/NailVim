@@ -9,9 +9,10 @@ Tested OS:
 	2. Ubutnu 12.04.3 64 bit
 
 Installation:
-	1. sudo apt-get install vim cscope git
+	1. sudo apt-get install vim cscope git	
     2. git clone https://github.com/s894330/NailVim.git
-    3. ./NailVim/script/install.sh
+    3. sudo dpkg -i NailVim/zipFile/exuberant-ctags_5.8-2_amd64.deb
+    4. ./NailVim/script/install.sh
 
     
     mv NailVim ~/.vim
