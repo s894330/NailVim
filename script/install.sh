@@ -40,7 +40,6 @@ fi
 
 # setup ~/.bashrc
 cat $nailVim/script/alias >> ~/.bashrc
-source ~/.bashrc
 
 echo "done"
 echo "enjoy VIM !!"
