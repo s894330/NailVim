@@ -1,24 +1,32 @@
 #!/bin/bash
+# purpose:
+#	1. enable ctrl+<key> in vim
+#	2. prevent multi vim instance in the same project
 
-# bash
-# No ttyctl, so we need to save and then restore terminal settings
-vim()
-{
-	# save ttyctl setting
-    local STTYOPTS="$(stty --save)"
-    stty stop '' -ixoff -ixon
+# include variables
+myDIR=$(dirname $(readlink -f $0))
+source $myDIR/variable.sh
 
-    # generate unique server id
-    ServerID=$RANDOM
+# check if cscope.out is exist
+if [ -f $cscopeFile ]; then	# this is a project folder
+	if [ -f $errFile ]; then	# there is other vim occupy this project
+		echo "there is other vim occupy this project, please close it first!!"
+		exit		
+	fi
+	
+	# generate unique server id
+	ServerID=$RANDOM
 
-    # call background update cscope script
-    command BackgroundUpdateCScope.sh $ServerID &
+	# call background update cscope script
+	BackgroundUpdateCScope.sh $ServerID &
+fi
 
-    # call vim
-    command vim --servername $ServerID $@
-    
-    # restore ttyctl setting
-    stty "$STTYOPTS"
-}
+# save ttyctl setting
+STTYOPTS="$(stty --save)"
+stty stop '' -ixoff -ixon
 
-vim $@
+# call vim
+vim --servername $ServerID $@
+   
+# restore ttyctl setting
+stty "$STTYOPTS"
