@@ -5,7 +5,7 @@ let mapleader = ","
 "== file operation ==
 "save file
 nnoremap <silent> <C-s> :w<CR>
-inoremap <silent> <C-s> <Esc>:w<CR>a
+inoremap <silent> <C-s> <Esc>:w<CR>
 "exit file without save
 nnoremap <silent> <C-q> :Bclose!<CR>
 inoremap <silent> <C-q> <Esc>:Bclose!<CR>
@@ -36,7 +36,7 @@ vnoremap <silent> <C-c> "+y
 vnoremap <silent> <C-x> "+d
 "past text
 nnoremap <silent> <C-v> "+p<Esc>
-inoremap <silent> <C-v> <Esc>"+p<Esc>a<Left>
+inoremap <silent> <C-v> <Esc>"+p<Esc>a
 vnoremap <silent> <C-v> "+p
 "delete one line text
 nnoremap <silent> <C-d> dd
@@ -51,10 +51,12 @@ inoremap <silent> <C-a> <Esc><C-R>
 "enable ctrl+End=select
 nnoremap <silent> <C-e> v<End>
 inoremap <silent> <C-e> <Esc><Right>v<End>
+"select word
+nnoremap <silent> bb bvw<Left>
 
 "== text movement operation ==
 "move cursor to the end
-nnoremap <silent> w<End> <End>a
+nnoremap <silent> <End><End> <End>a
 "enable enter in normal mode
 nnoremap <silent> <Enter><Enter> i<CR>
 "enable backspace in normal mode
@@ -96,7 +98,7 @@ inoremap <silent> <C-k> <Esc>:w!<CR>:!clear && make && ./a.out<CR>
 set mouse=a
 
 "display line number
-"set number
+set number
 
 "Add full file path to statusline
 set statusline=%F
@@ -108,14 +110,16 @@ set cindent
 set t_Co=256
 colorscheme nail-color
 
+"set highlight search matches
+"set hlsearch
+
 "expand tab in source code
 autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.java set shiftwidth=4 | set expandtab
 "================================================
 
-" Go to last file(s) if invoked without arguments.
+autocmd VimEnter * call LoadCscope()
 autocmd VimEnter * call LoadVimSession()
 autocmd VimEnter * call CheckProject()
-autocmd VimEnter * call LoadCscope()
 
 autocmd VimLeave * call SaveVimSession()
 

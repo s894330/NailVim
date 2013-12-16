@@ -36,7 +36,8 @@ function! Nail_Exit_All()
 endfunction
 
 function! ResetCscope()
-	cscope reset
+	cscope kill -1
+	cscope add $PWD/cscope.out
 endfunction
 
 function! Echo()	
