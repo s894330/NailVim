@@ -98,7 +98,7 @@ inoremap <silent> <C-k> <Esc>:w!<CR>:!clear && make && ./a.out<CR>
 set mouse=a
 
 "display line number
-set number
+"set number
 
 "Add full file path to statusline
 set statusline=%F
