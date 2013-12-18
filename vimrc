@@ -117,6 +117,9 @@ colorscheme nail-color
 "set highlight search matches
 "set hlsearch
 
+"shorten the key timeout time
+set timeoutlen=180
+
 "expand tab in source code
 autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.java set shiftwidth=4 | set expandtab
 "================================================
