@@ -23,15 +23,18 @@ inoremap <silent> <C-Right> <Esc>:bn<CR>
 nnoremap <silent> <C-Left> :bp<CR>
 inoremap <silent> <C-Left> <Esc>:bp<CR>
 "find file
-nnoremap <silent> <C-f> :cs find 7 
-inoremap <silent> <C-f> <Esc>:cs find 7 
-vnoremap <silent> <C-f> <Esc>:cs find 7
+nnoremap <silent> <C-f> :cs find 6 
+inoremap <silent> <C-f> <Esc>:cs find 6 
+vnoremap <silent> <C-f> <Esc>:cs find 6 
 
 "== text operation ==
 "copy text
 nnoremap <silent> <C-c> "+yy
 inoremap <silent> <C-c> <Esc>"+yya
 vnoremap <silent> <C-c> "+y
+"select all test
+nnoremap <silent> <C-a> ggvG
+inoremap <silent> <C-a> <Esc>ggvG
 "cut text
 vnoremap <silent> <C-x> "+d
 "past text
@@ -45,9 +48,6 @@ inoremap <silent> <C-d> <Esc>dda
 nnoremap <silent> <C-z> u
 inoremap <silent> <C-z> <Esc>ui
 vnoremap <silent> <C-z> ui
-"redo
-nnoremap <silent> <C-a> <C-R>
-inoremap <silent> <C-a> <Esc><C-R>
 "enable ctrl+End=select
 nnoremap <silent> <C-e> v<End>
 inoremap <silent> <C-e> <Esc><Right>v<End>
@@ -63,9 +63,13 @@ nnoremap <silent> <Enter><Enter> i<CR>
 nnoremap <silent> <Backspace> i<Backspace>
 "enable space in normal mode
 nnoremap <silent> w<Space> i<Space>
-"1 maps to line head, 0 maps to line tail
-nnoremap <silent> 1 0
-nnoremap <silent> 0 $
+"1~9 maps to 1~5 searched word, 0 maps to last searched word
+nnoremap <silent> 1 ggn
+nnoremap <silent> 2 ggnn
+nnoremap <silent> 3 ggnnn
+nnoremap <silent> 4 ggnnnn
+nnoremap <silent> 5 ggnnnnn
+nnoremap <silent> 0 GN
 
 "== format file operation ==
 "toggle line number

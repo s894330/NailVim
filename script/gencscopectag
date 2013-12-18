@@ -11,7 +11,7 @@ echo -n "generate ctag file..."
 # for reference: add " at begin and end when execute find
 #find . \( -path './build' -o -path './cts' -o -path './docs' -o -path './gdk' -o -path './ndk' -o -path './pdk' -o -path './prebuilts' -o -path './sdk' -o -path './tools' \) -a -prune -o -iname *.java -o -iname *.cpp -o -iname *.c -o -iname *.h -type f -exec echo \"{}\" \; > cscope.files
 
-find . \( -path './build' -o -path './cts' -o -path './docs' -o -path './gdk' -o -path './ndk' -o -path './pdk' -o -path './prebuilts' -o -path './sdk' -o -path './tools' \) -a -prune -o -type f -iname '*.java' -o -type f -iname '*.cpp' -o -type f -iname '*.c' -o -type f -iname '*.h' | sed "s:./::" | sed "s:^:`pwd`/:" > $CTAG_FILE
+find . \( -path './build' -o -path './cts' -o -path './docs' -o -path './gdk' -o -path './ndk' -o -path './pdk' -o -path './prebuilts' -o -path './sdk' -o -path './tools' -o -path './out' \) -a -prune -o -type f -iname '*.java' -o -type f -iname '*.cpp' -o -type f -iname '*.c' -o -type f -iname '*.h' | sed "s:./::" | sed "s:^:`pwd`/:" > $CTAG_FILE
 
 ctags -L $CTAG_FILE
 echo "done !!"
