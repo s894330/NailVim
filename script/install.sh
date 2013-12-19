@@ -38,8 +38,9 @@ if [ ! -L ~/.bin/vim.sh ]; then
 	ln -s ~/.vim/script/gencscopectag ~/.bin/gencscopectag
 fi
 
-# setup ~/.bashrc
+# setup ~/.bashrc and root bashrc
 cat $nailVim/script/alias >> ~/.bashrc
+sudo cat $nailVim/script/rootAlias >> /etc/bash.bashrc
 
 echo "done"
 echo "enjoy VIM !!"

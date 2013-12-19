@@ -1,0 +1,23 @@
+
+alias ai='apt-get install'
+alias c='clear'
+alias b='shutdown -h now'
+alias bbb='	echo -n "mount sda8..." && 
+		mount /dev/sda8 /opt/sda8 && 
+		echo "done" &&
+		echo -n "copying xp.vdi..." &&
+		cp /opt/OA_XP/XP.vdi /opt/sda8/ &&
+		echo "done" &&
+		echo -n "syncing..." &&
+		sync && sync && sync &&
+		echo "done" &&
+		echo "goodbye !!" && shutdown -h now		
+	'
+alias r='reboot'
+alias q='exit'
+#alias rm='rm -i'
+#alias vi='vim.sh'
+
+alias s='sync && sync && sync'
+alias aks='adb kill-server'
+alias ass='adb start-server'

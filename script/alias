@@ -1,3 +1,66 @@
 
 alias vi='vim.sh'
+alias ai='sudo apt-get install'
+alias sd='sudo su'
+alias lm='ls -alh | less'
+alias tarx='tar xvf'
+alias c='clear'
+alias q='exit'
+alias dfh='df -h'
+alias duh='du -h --max-depth=1'
+#alias rmv='rm -v'
+
+alias g++='g++ -Wall'
+alias gcc='gcc -Wall'
+
+alias gs='git status'
+alias ga='git add'
+alias gau='git add -u'
+alias gr='git rm'
+alias grb='git rebase'
+alias gc='git commit'
+alias gca='git commit -a'
+alias gcm='git commit --amend'
+alias gp='git push'
+alias gu='git pull'
+alias gl='git log'
+alias gt='git tag'
+alias gb='git branch'
+alias gco='git checkout'
+alias gm='git merge --no-ff'
+alias gd='git diff'
+alias grs='git reset --hard'
+alias grv='git revert'
+alias ggc='git gc'
+alias gst='git stash'
+alias gsp='git stash pop'
+alias gk='gitk &'
+alias rs='repo sync -j1'
+alias rss='repo forall -c git reset --hard && repo sync -j1'
+alias rso='repo sync . -j1'
+alias rst='repo start patch .'
+alias rsu='repo upload .'
+#alias gg='git config push.default matching'
+alias m='make'
+alias mc='make clean'
+alias mdc='make distclean'
+alias s='sync && sync && sync'
+alias h='history'
+#alias g='geany &'
+alias ua='uname -a'
+alias al='adb logcat -v time'
+alias cscope='cscope -p8'
+
+export PATH=$PATH:/opt/android/sdk/platform-tools:/opt/jdk1.6.0_43/bin
+
+#for speeding up Android source build
+export CCACHE_DIR=/opt/.ccache
+
+#for Sun Java environment
+export JAVA_HOME=/opt/jdk1.6.0_43
+export CLASSPATH=$JAVA_HOME/lib:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+
+#for vim volor
+#export TERM=xterm-256color
+
 export PATH=$PATH:~/.bin

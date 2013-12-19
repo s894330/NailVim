@@ -3,6 +3,7 @@ NailVim
 
 Purpose:
     1. let vim become a powerful editor
+    2. backup all my working environment
 
 Tested OS:
 	1. Ubuntu 11.10 64bit
