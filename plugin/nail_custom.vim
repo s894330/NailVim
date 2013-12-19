@@ -6,14 +6,18 @@ if exists('loaded_nail_custom')
 endif
 let loaded_nail_custom = 1
 
-" Global variables
+" ========  Global variables  ========
 let g:trinity_on = 0
+let g:fold_on = 0
 
-" User interfaces
+" ========  User interfaces  ========
 command! -nargs=0 -bar ExitAll
     \ call Nail_Exit_All()
+    
+command! -nargs=0 -bar ToggleFold
+    \ call ToggleFold()
 
-" Functions
+" ========  Functions  ========
 function! Nail_trinity_toggle()
 	if g:trinity_on == 0
 		"echo "set trinity on to 1"
@@ -76,4 +80,15 @@ function! LoadCscope()
     exe "cs add " . db . " " . path
     set cscopeverbose
   endif
+endfunction
+
+function! ToggleFold()
+	if g:fold_on == 0	"first time use
+		let g:fold_on = 1
+		normal! za	"enable fold
+		normal! zR	"unfold all
+		normal! za	"fold current		
+	else
+		normal! za
+	endif
 endfunction
