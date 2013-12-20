@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ "$1" == "" ] || [ "$2" == "" ]; then
+	echo "usage: ncs <ip> <filename>"
+else
+	cat $2 | nc $1 8888
+	echo done
+fi
+

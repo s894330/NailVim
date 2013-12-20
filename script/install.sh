@@ -33,9 +33,10 @@ if [ ! -d ~/.bin ]; then
 fi
 
 if [ ! -L ~/.bin/vim.sh ]; then
-	ln -s ~/.vim/script/vim.sh ~/.bin/vim.sh
-	ln -s ~/.vim/script/BackgroundUpdateCScope.sh ~/.bin/BackgroundUpdateCScope.sh
-	ln -s ~/.vim/script/gencscopectag ~/.bin/gencscopectag
+	for file in $nailVim/script/script/*
+	do
+		ln -s ~/.vim/script/script/$file ~/.bin/$file	
+	done
 fi
 echo "done"
 
