@@ -33,9 +33,10 @@ if [ ! -d ~/.bin ]; then
 fi
 
 if [ ! -L ~/.bin/vim.sh ]; then
-	for file in $nailVim/script/script/*
+	for file in ~/.vim/script/script/*
 	do
-		ln -s ~/.vim/script/script/$file ~/.bin/$file	
+		echo "link file: $(basename $file)"
+		ln -s ~/.vim/script/script/$(basename $file) ~/.bin/$(basename $file)
 	done
 fi
 echo "done"
