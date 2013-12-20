@@ -48,11 +48,6 @@ inoremap <silent> <C-d> <Esc>dda
 nnoremap <silent> <C-z> u
 inoremap <silent> <C-z> <Esc>ui
 vnoremap <silent> <C-z> ui
-"enable ctrl+End=select
-nnoremap <silent> <C-e> v<End>
-inoremap <silent> <C-e> <Esc><Right>v<End>
-"select word
-nnoremap <silent> bb bvw<Left>
 
 "== text movement operation ==
 "move cursor to the end
