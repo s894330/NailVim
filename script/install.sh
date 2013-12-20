@@ -44,6 +44,6 @@ echo "done"
 echo -n "Setup environment..."
 # setup ~/.bashrc and root bashrc
 cat $nailVim/script/alias >> ~/.bashrc
-sudo cat $nailVim/script/rootAlias >> /etc/bash.bashrc
+#sudo cat $nailVim/script/rootAlias >> /etc/bash.bashrc
 echo "done"
-echo "enjoy it !!"
+echo "please execute \"source ~/.bashrc\" and then enjoy it !!"
