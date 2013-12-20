@@ -4,7 +4,7 @@
 
 # include variables
 myDIR=$(dirname $(readlink -f $0))
-source $myDIR/variable.sh
+source $myDIR/../variable.sh
 
 touch $errFile
 while true
