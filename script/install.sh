@@ -32,13 +32,14 @@ if [ ! -d ~/.bin ]; then
 	mkdir ~/.bin
 fi
 
-if [ ! -L ~/.bin/vim.sh ]; then
-	for file in ~/.vim/script/script/*
-	do
+for file in ~/.vim/script/script/*
+do
+	if [ ! -L ~/.bin/$(basename $file) ]; then
 		echo "link file: $(basename $file)"
 		ln -s ~/.vim/script/script/$(basename $file) ~/.bin/$(basename $file)
-	done
-fi
+	fi
+done
+
 echo "done"
 
 echo -n "Setup environment..."
