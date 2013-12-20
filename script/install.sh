@@ -52,6 +52,11 @@ do
 done
 
 echo "Setup environment..."
+if [ -f ~/.bashrc_backup ]; then
+	$CP ~/.bashrc_backup ~/.bashrc
+else
+	$CP ~/.bashrc ~/.bashrc_backup
+fi
 # setup ~/.bashrc and root bashrc
 cat $nailVim/script/alias >> ~/.bashrc
 #sudo cat $nailVim/script/rootAlias >> /etc/bash.bashrc
