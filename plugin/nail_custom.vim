@@ -17,6 +17,9 @@ command! -nargs=0 -bar ExitAll
 command! -nargs=0 -bar ToggleFold
     \ call ToggleFold()
 
+command! -nargs=0 -bar CodeFormat
+    \ call CodeFormat()    
+
 " ========  Functions  ========
 function! Nail_trinity_toggle()
 	if g:trinity_on == 0
@@ -91,4 +94,23 @@ function! ToggleFold()
 	else
 		normal! za
 	endif
+endfunction
+
+function! CodeFormat()
+	"get current line number
+	let lineNum = line(".")
+
+	"formatting
+	if &filetype == 'c'
+		exec "%! astyle --style=java --indent=spaces=4 --attach-namespaces --attach-classes --indent-preproc-define --indent-col1-comments --min-conditional-indent=0 --max-instatement-indent=40 --break-blocks --pad-oper --pad-header --unpad-paren --delete-empty-lines --align-pointer=name --align-reference=name --remove-brackets --convert-tabs --close-templates --break-after-logical"
+	elseif &filetype == 'cpp'	".h file will recognize to .cpp
+		exec "%! astyle --style=java --indent=spaces=4 --attach-namespaces --attach-classes --indent-preproc-define --indent-col1-comments --min-conditional-indent=0 --max-instatement-indent=40 --break-blocks --pad-oper --pad-header --unpad-paren --delete-empty-lines --align-pointer=name --align-reference=name --remove-brackets --convert-tabs --close-templates --break-after-logical"
+    elseif &filetype == 'java'
+		exec "%! astyle --style=java --indent=spaces=4 --attach-namespaces --attach-classes --indent-preproc-define --indent-col1-comments --min-conditional-indent=0 --max-instatement-indent=40 --break-blocks --pad-oper --pad-header --unpad-paren --delete-empty-lines --align-pointer=name --align-reference=name --remove-brackets --convert-tabs --close-templates --break-after-logical"
+    else 
+		echo "not supported filetype: ".&filetype
+    endif
+
+    "return to original line
+    exec lineNum
 endfunction
