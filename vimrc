@@ -108,19 +108,12 @@ set mouse=a
 "display line number
 "set number
 
-"Add full file path to statusline
-set statusline=%F%m%r%h%w\%=row:%l/%L(%03p%%)\ col:%03v
-
 "set auto indent
 set cindent
 
 "load color scheme
 set t_Co=256
 colorscheme nail-color
-
-"highlight the line margin
-"let &colorcolumn="81,".join(range(81,999),",")
-set colorcolumn=81
 
 "set highlight search matches
 "set hlsearch

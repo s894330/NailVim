@@ -55,6 +55,13 @@ function! CheckProject()
 		call Trinity_Toggle()
 		normal! zz	" center the screen
 		execute "set number"
+
+		"Add full file path to statusline
+		setlocal statusline=%F%m%r%h%w\%=row:%l/%L(%03p%%)\ col:%03v
+		
+		"highlight the line margin
+		"let &colorcolumn="81,".join(range(81,999),",")
+		setlocal colorcolumn=81		
 	endif
 endfunction
 
