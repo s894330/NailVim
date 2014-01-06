@@ -4,6 +4,7 @@
 
 # include variables
 myDIR=$(dirname $(readlink -f $0))
+vimTMP=".vimTmp"
 source $myDIR/../variable.sh
 
 touch $errFile
@@ -23,8 +24,12 @@ do
 
 	# if got error, exit anyway
 	if [ -s $errFile ]; then
+		# modify Session.vim file		
+		sed '/setlocal colorcolumn=81/d' < $PWD/.vimSession/Session.vim > $vimTMP && mv $vimTMP $PWD/.vimSession/Session.vim
+		
 		#echo "vim not exist, exit"
-		rm -rf $errFile
+		rm -rf $errFile	
+				
 		exit
 	fi
 done
