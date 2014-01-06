@@ -19,4 +19,5 @@ echo "done !!"
 echo -n "generate cscope file..."
 sed 's/^/"/;s/$/"/' $CTAG_FILE > $CSCOPE_FILE
 cscope -bCkR -i $CSCOPE_FILE >/dev/null 2>&1
+rm -rf $CTAG_FILE
 echo "done !!"
