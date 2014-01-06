@@ -119,7 +119,8 @@ set t_Co=256
 colorscheme nail-color
 
 "highlight the line margin
-"set colorcolumn=81
+"let &colorcolumn="81,".join(range(81,999),",")
+set colorcolumn=81
 
 "set highlight search matches
 "set hlsearch
