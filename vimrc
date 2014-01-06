@@ -109,7 +109,7 @@ set mouse=a
 "set number
 
 "Add full file path to statusline
-set statusline=%F
+set statusline=%F%m%r%h%w\%=row:%l/%L(%03p%%)\ col:%03v
 
 "set auto indent
 set cindent
@@ -117,6 +117,9 @@ set cindent
 "load color scheme
 set t_Co=256
 colorscheme nail-color
+
+"highlight the line margin
+"set colorcolumn=81
 
 "set highlight search matches
 "set hlsearch
