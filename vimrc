@@ -94,6 +94,13 @@ nnoremap <silent> ff :CodeFormat<CR>
 "auto make and run
 nnoremap <silent> <C-k> :w!<CR>:!clear && make && ./a.out<CR>
 inoremap <silent> <C-k> <Esc>:w!<CR>:!clear && make && ./a.out<CR>
+"auto close
+inoremap { {<CR>}<Esc>ko
+inoremap " ""<Left>
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap <C-w> /*<Space><Space>*/<Left><Left><Left>
+nnoremap <C-w> i/*<Space><Space>*/<Left><Left><Left>
 "================================================
 
 "====== Set general vim property  ===============
