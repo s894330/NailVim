@@ -10,7 +10,7 @@ source $myDIR/../variable.sh
 touch $errFile
 while true
 do
-	sleep 3	# update interval
+	sleep 5	# update interval
 	stat1=$(stat -c %y $cscopeFile)		
 	cscope -bCkR >/dev/null 2>&1
 	stat2=$(stat -c %y $cscopeFile)		
