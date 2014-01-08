@@ -52,6 +52,7 @@ vnoremap <silent> <C-z> ui
 "== text movement operation ==
 "move cursor to the end
 nnoremap <silent> <End><End> <End>a
+inoremap <silent> <C-e> <End>
 "enable enter in normal mode
 nnoremap <silent> <Enter><Enter> i<CR>
 "enable backspace in normal mode
