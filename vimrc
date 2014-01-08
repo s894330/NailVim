@@ -137,11 +137,8 @@ set timeoutlen=300
 autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.java set shiftwidth=4 | set expandtab
 "================================================
 
-autocmd VimEnter * call LoadCscope()
-autocmd VimEnter * call LoadVimSession()
-autocmd VimEnter * call CheckProject()
-
-autocmd VimLeave * call SaveVimSession()
+autocmd VimEnter * call OpenProject()
+autocmd VimLeave * call CloseProject()
 
 "for pathogen.vim management
 execute pathogen#infect()

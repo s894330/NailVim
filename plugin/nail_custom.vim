@@ -50,8 +50,10 @@ endfunction
 function! Echo()
 endfunction
 
-function! CheckProject()
-	if filereadable($PWD . "/cscope.out")	" this is project directory	
+function! OpenProject()
+	if filereadable($PWD . "/cscope.out")	" this is project directory
+		call LoadCscope()
+		call LoadVimSession()
 		call Trinity_Toggle()
 		normal! zz	" center the screen
 		execute "set number"
@@ -65,31 +67,33 @@ function! CheckProject()
 	endif
 endfunction
 
-function! SaveVimSession()
+function! CloseProject()
 	if filereadable($PWD . "/cscope.out")	" this is project directory
-		if (!isdirectory($PWD . "/.vimSession"))
-			call mkdir($PWD . "/.vimSession")
-		endif
-		execute "mksession! " . $PWD . "/.vimSession/Session.vim"
+		call SaveVimSession()
+	endif	
+endfunction
+
+function! SaveVimSession()
+	if (!isdirectory($PWD . "/.vimSession"))
+		call mkdir($PWD . "/.vimSession")
 	endif
+	execute "mksession! " . $PWD . "/.vimSession/Session.vim"
 endfunction
 
 function! LoadVimSession()
-	if filereadable($PWD . "/cscope.out")	" this is project directory	
-		if argc() == 0 && filereadable($PWD . "/.vimSession/Session.vim")
-			execute "source " . $PWD . "/.vimSession/Session.vim"
-		endif
+	if argc() == 0 && filereadable($PWD . "/.vimSession/Session.vim")
+		execute "source " . $PWD . "/.vimSession/Session.vim"
 	endif
 endfunction
 
-function! LoadCscope()  
-  let db = findfile("cscope.out", ".;")
-  if (!empty(db))
-    let path = strpart(db, 0, match(db, "/cscope.out$"))
-    set nocscopeverbose " suppress 'duplicate connection' error
-    exe "cs add " . db . " " . path
-    set cscopeverbose
-  endif
+function! LoadCscope()
+	let db = findfile("cscope.out", ".;")
+	if (!empty(db))
+		let path = strpart(db, 0, match(db, "/cscope.out$"))
+		set nocscopeverbose " suppress 'duplicate connection' error
+		exe "cs add " . db . " " . path
+		set cscopeverbose
+    endif
 endfunction
 
 function! ToggleFold()
