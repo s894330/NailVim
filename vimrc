@@ -60,7 +60,9 @@ nnoremap <silent> <Backspace> i<Backspace>
 "enable space in normal mode
 nnoremap <silent> w<Space> i<Space>
 "1~9 maps to 1~5 searched word, 6~0 maps to last searched word
-nnoremap <silent> 1 *ggn
+nnoremap <silent> 1 *ggnzz
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
 "nnoremap <silent> 2 *ggnn
 "nnoremap <silent> 3 *ggnnn
 "nnoremap <silent> 4 *ggnnnn
@@ -70,7 +72,7 @@ nnoremap <silent> 1 *ggn
 "nnoremap <silent> 7 *GNNNN
 "nnoremap <silent> 8 *GNNN
 "nnoremap <silent> 9 *GNN
-nnoremap <silent> 0 *GN
+nnoremap <silent> 0 *GNzz
 
 "== format file operation ==
 "toggle line number
