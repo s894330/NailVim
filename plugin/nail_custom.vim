@@ -52,24 +52,41 @@ endfunction
 
 function! OpenProject()
 	if filereadable($PWD . "/cscope.out")	" this is project directory
-		call LoadCscope()
-		call LoadVimSession()
-		call Trinity_Toggle()
-		normal! zz	" center the screen
-		execute "set number"
+		if filereadable($PWD . "/.projectVim")	" this folder already open vim for project
+			echo "this folder already open vim for project"
+			let g:isProjectVim = 0
+		else
+			if filereadable($PWD . "/.errMsg")	" this vim is really called from vim.sh
+				call system("touch $PWD/.projectVim")
+				let g:isProjectVim = 1
+				
+				call LoadCscope()
+				call LoadVimSession()
+				call Trinity_Toggle()
+				normal! zz	" center the screen
+				execute "set number"
 
-		"Add full file path to statusline
-		setlocal statusline=%F%m%r%h%w\%=row:%l/%L(%03p%%)\ col:%03v
-		
-		"highlight the line margin
-		"let &colorcolumn="81,".join(range(81,999),",")
-		setlocal colorcolumn=81		
+				"Add full file path to statusline
+				setlocal statusline=%F%m%r%h%w\%=row:%l/%L(%03p%%)\ col:%03v
+				
+				"highlight the line margin
+				"let &colorcolumn="81,".join(range(81,999),",")
+				setlocal colorcolumn=81
+			else
+				let g:isProjectVim = 0
+			endif			
+		endif
 	endif
 endfunction
 
 function! CloseProject()
 	if filereadable($PWD . "/cscope.out")	" this is project directory
-		call SaveVimSession()
+		if g:isProjectVim == 1	" this is open vim for project
+			call delete($PWD . "/.projectVim")
+			call SaveVimSession()
+		else
+			let g:isProjectVim = 0
+		endif		
 	endif	
 endfunction
 
