@@ -59,6 +59,8 @@ nnoremap <silent> <Enter><Enter> i<CR>
 nnoremap <silent> <Backspace> i<Backspace>
 "enable space in normal mode
 nnoremap <silent> w<Space> i<Space>
+"fast to file end
+nnoremap <silent> bg Gzz
 "1~9 maps to 1~5 searched word, 6~0 maps to last searched word
 nnoremap <silent> 1 *ggnzz
 nnoremap <silent> n nzz
@@ -76,14 +78,28 @@ nnoremap <silent> 0 *GNzz
 
 "== format file operation ==
 "toggle line number
-nnoremap <silent> <C-l> :set invnumber<CR>
-inoremap <silent> <C-l> <Esc>:set invnumber<CR>
+nnoremap <silent> <C-n> :set invnumber<CR>
+inoremap <silent> <C-n> <Esc>:set invnumber<CR>
 "enable <tab> in normal mode
 nnoremap <silent> <Tab> :><CR>
 nnoremap <silent> <S-Tab> :<<CR>
 inoremap <silent> <S-Tab> <Esc>:<<CR>i
 vnoremap <silent> <Tab> >
 vnoremap <silent> <S-Tab> <
+
+"== cursor movement =="
+nnoremap <silent> i <Up>
+inoremap <silent> <C-i> <Up>
+nnoremap <silent> k <Down>
+inoremap <silent> <C-k> <Down>
+nnoremap <silent> j <Left>
+inoremap <silent> <C-j> <Left>
+nnoremap <silent> l <Right>
+inoremap <silent> <C-l> <Right>
+nnoremap <silent> u <PageUp>
+inoremap <silent> <C-u> <PageUp>
+nnoremap <silent> o <PageDown>
+inoremap <silent> <C-o> <PageDown>
 
 "== programming operation ==
 "for toggleComment
@@ -95,8 +111,8 @@ vnoremap <silent> <C-b>       mZ:call ToggleComment_toggle()<CR>`Z
 "format coding style
 nnoremap <silent> ff :CodeFormat<CR>
 "auto make and run
-nnoremap <silent> <C-k> :w!<CR>:!clear && make && ./a.out<CR>
-inoremap <silent> <C-k> <Esc>:w!<CR>:!clear && make && ./a.out<CR>
+nnoremap <silent> <C-p> :w!<CR>:!clear && make && ./a.out<CR>
+inoremap <silent> <C-p> <Esc>:w!<CR>:!clear && make && ./a.out<CR>
 "auto close
 inoremap { {<CR>}<Esc>ko
 inoremap " ""<Left>
