@@ -49,6 +49,9 @@ nnoremap <silent> <C-z> u
 inoremap <silent> <C-z> <Esc>ua<Left>
 vnoremap <silent> <C-z> ua<Left>
 
+"redo
+inoremap <silent> <C-r> <Esc><C-r>a<Left>
+
 "== text movement operation ==
 "move cursor to the end
 nnoremap <silent> <End><End> <End>a
