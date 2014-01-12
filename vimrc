@@ -52,7 +52,12 @@ vnoremap <silent> <C-z> ui
 "== text movement operation ==
 "move cursor to the end
 nnoremap <silent> <End><End> <End>a
+nnoremap <silent> e <End>
 inoremap <silent> <C-e> <End>
+"move cursor to the home
+nnoremap <silent> <Home><Home> <Home>i
+nnoremap <silent> h <Home>
+inoremap <silent> <C-h> <Home>
 "enable enter in normal mode
 nnoremap <silent> <Enter><Enter> i<CR>
 "enable backspace in normal mode
@@ -88,8 +93,10 @@ vnoremap <silent> <Tab> >
 vnoremap <silent> <S-Tab> <
 
 "== cursor movement =="
-nnoremap <silent> i <Up>
-inoremap <silent> <C-i> <Up>
+"can not mapping ctrl+i, the behavior of ctrl + i is the same as <tab>
+"you can use <alt> + i instead
+"nnoremap <silent> i <Up> 
+"inoremap <silent> <C-i> <Up>
 nnoremap <silent> k <Down>
 inoremap <silent> <C-k> <Down>
 nnoremap <silent> j <Left>
