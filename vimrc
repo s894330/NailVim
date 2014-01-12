@@ -46,8 +46,8 @@ nnoremap <silent> <C-d> dd
 inoremap <silent> <C-d> <Esc>dda
 "undo
 nnoremap <silent> <C-z> u
-inoremap <silent> <C-z> <Esc>ui
-vnoremap <silent> <C-z> ui
+inoremap <silent> <C-z> <Esc>ua<Left>
+vnoremap <silent> <C-z> ua<Left>
 
 "== text movement operation ==
 "move cursor to the end
@@ -55,15 +55,15 @@ nnoremap <silent> <End><End> <End>a
 nnoremap <silent> e <End>
 inoremap <silent> <C-e> <End>
 "move cursor to the home
-nnoremap <silent> <Home><Home> <Home>i
+nnoremap <silent> <Home><Home> <Home>a<Left>
 nnoremap <silent> h <Home>
 inoremap <silent> <C-h> <Home>
 "enable enter in normal mode
-nnoremap <silent> <Enter><Enter> i<CR>
+nnoremap <silent> <Enter><Enter> a<Left><CR>
 "enable backspace in normal mode
-nnoremap <silent> <Backspace> i<Backspace>
+nnoremap <silent> <Backspace> a<Left><Backspace>
 "enable space in normal mode
-nnoremap <silent> w<Space> i<Space>
+nnoremap <silent> w<Space> a<Left><Space>
 "fast to file end
 nnoremap <silent> bg Gzz
 "1~9 maps to 1~5 searched word, 6~0 maps to last searched word
@@ -88,14 +88,14 @@ inoremap <silent> <C-n> <Esc>:set invnumber<CR>
 "enable <tab> in normal mode
 nnoremap <silent> <Tab> :><CR>
 nnoremap <silent> <S-Tab> :<<CR>
-inoremap <silent> <S-Tab> <Esc>:<<CR>i
+inoremap <silent> <S-Tab> <Esc>:<<CR>a<Left>
 vnoremap <silent> <Tab> >
 vnoremap <silent> <S-Tab> <
 
 "== cursor movement =="
+nnoremap <silent> i <Up> 
 "can not mapping ctrl+i, the behavior of ctrl + i is the same as <tab>
 "you can use <alt> + i instead
-"nnoremap <silent> i <Up> 
 "inoremap <silent> <C-i> <Up>
 nnoremap <silent> k <Down>
 inoremap <silent> <C-k> <Down>
@@ -111,7 +111,7 @@ inoremap <silent> <C-o> <PageDown>
 "== programming operation ==
 "for toggleComment
 nnoremap <silent> <C-b>       mZ:call ToggleComment_toggle()<CR>`Z
-inoremap <silent> <C-b>       <Esc>mZ:call ToggleComment_toggle()<CR>`Zi
+inoremap <silent> <C-b>       <Esc>mZ:call ToggleComment_toggle()<CR>`Za<Left>
 vnoremap <silent> <C-b>       mZ:call ToggleComment_toggle()<CR>`Z
 "folding
 "nnoremap <silent> ff :ToggleFold<CR>
