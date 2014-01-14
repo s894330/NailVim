@@ -69,20 +69,10 @@ nnoremap <silent> <Backspace> a<Left><Backspace>
 nnoremap <silent> w<Space> a<Left><Space>
 "fast to file end
 nnoremap <silent> bg Gzz
-"1~9 maps to 1~5 searched word, 6~0 maps to last searched word
-nnoremap <silent> 1 *ggnzz
+"maps f to first keyword
+nnoremap <silent> f *ggnzz
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
-"nnoremap <silent> 2 *ggnn
-"nnoremap <silent> 3 *ggnnn
-"nnoremap <silent> 4 *ggnnnn
-"nnoremap <silent> 5 *ggnnnnn
-
-"nnoremap <silent> 6 *GNNNNN
-"nnoremap <silent> 7 *GNNNN
-"nnoremap <silent> 8 *GNNN
-"nnoremap <silent> 9 *GNN
-nnoremap <silent> 0 *GNzz
 
 "== format file operation ==
 "toggle line number
