@@ -71,7 +71,7 @@ function! OpenProject()
 				
 				"highlight the line margin
 				"let &colorcolumn="81,".join(range(81,999),",")
-				setlocal colorcolumn=81
+				setlocal colorcolumn=80
 			else
 				let g:isProjectVim = 0
 			endif			
