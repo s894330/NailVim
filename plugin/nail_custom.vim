@@ -18,7 +18,16 @@ command! -nargs=0 -bar ToggleFold
     \ call ToggleFold()
 
 command! -nargs=0 -bar CodeFormat
-    \ call CodeFormat()    
+    \ call CodeFormat()
+
+command! -nargs=0 -bar CheckLittleBracket
+    \ call Check_little_bracket()
+
+command! -nargs=0 -bar CheckMiddleBracket
+    \ call Check_middle_bracket()
+
+command! -nargs=0 -bar CheckDoubleQuote
+    \ call Check_double_quote()    
 
 " ========  Functions  ========
 function! Nail_trinity_toggle()
@@ -141,4 +150,81 @@ function! CodeFormat()
 
     "return to original line
     exec lineNum
+endfunction
+
+function! Check_little_bracket()
+	let pos = col('.')
+	let tot = col('$')-1
+
+	if pos != tot
+		" move cursor right once
+		call cursor('.', pos+1)
+
+		" get charactor under cursor
+		let char = getline('.')[col('.')-1]
+
+		if char == ')'
+			let pos1 = col('.')
+			normal! x
+			let pos2 = col('.')
+
+			if pos1 == pos2
+				" move cursor left once
+				call cursor('.', pos1-1)
+			endif
+		else
+			" move cursor left once
+			call cursor('.', pos)
+		endif
+		
+	endif
+endfunction
+
+function! Check_middle_bracket()
+	let pos = col('.')
+	let tot = col('$')-1
+
+	if pos != tot
+		" move cursor right once
+		call cursor('.', pos+1)
+
+		" get charactor under cursor
+		let char = getline('.')[col('.')-1]
+
+		if char == ']'
+			let pos1 = col('.')
+			normal! x
+			let pos2 = col('.')
+
+			if pos1 == pos2
+				" move cursor left once
+				call cursor('.', pos1-1)
+			endif
+		else
+			" move cursor left once
+			call cursor('.', pos)
+		endif
+		
+	endif
+endfunction
+
+function! Check_double_quote()
+	let pos = col('.')
+	let tot = col('$')-1
+
+	if pos != tot
+		let next_char = getline('.')[col('.')]
+	endif
+	
+	if pos != tot && next_char == '"'
+		" move cursor right once
+		call cursor('.', pos+1)
+	else
+		" directly insert ""
+		normal! a""
+
+		" move cursor left once
+		let pos = col('.')
+		call cursor('.', pos-1)
+	endif
 endfunction

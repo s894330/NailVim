@@ -114,12 +114,15 @@ nnoremap <silent> ff :CodeFormat<CR>
 nnoremap <silent> <C-p> :w!<CR>:!clear && make && ./a.out<CR>
 inoremap <silent> <C-p> <Esc>:w!<CR>:!clear && make && ./a.out<CR>
 "auto close
-inoremap { {<CR>}<Esc>ko
-inoremap " ""<Left>
 inoremap ( ()<Left>
 inoremap [ []<Left>
+inoremap { {<CR>}<Esc>ko
 inoremap <C-w> /*<Space><Space>*/<Left><Left><Left>
 nnoremap <C-w> i/*<Space><Space>*/<Left><Left><Left>
+
+inoremap " <Esc>:CheckDoubleQuote<CR>a
+inoremap ) <Esc>:CheckLittleBracket<CR>a)
+inoremap ] <Esc>:CheckMiddleBracket<CR>a]
 "================================================
 
 "====== Set general vim property  ===============
