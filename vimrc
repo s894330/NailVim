@@ -120,6 +120,7 @@ inoremap { {<CR>}<Esc>ko
 inoremap <C-w> /*<Space><Space>*/<Left><Left><Left>
 nnoremap <C-w> i/*<Space><Space>*/<Left><Left><Left>
 
+inoremap ' <Esc>:CheckSingleQuote<CR>a
 inoremap " <Esc>:CheckDoubleQuote<CR>a
 inoremap ) <Esc>:CheckLittleBracket<CR>a)
 inoremap ] <Esc>:CheckMiddleBracket<CR>a]

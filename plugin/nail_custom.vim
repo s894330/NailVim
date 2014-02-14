@@ -27,7 +27,10 @@ command! -nargs=0 -bar CheckMiddleBracket
     \ call Check_middle_bracket()
 
 command! -nargs=0 -bar CheckDoubleQuote
-    \ call Check_double_quote()    
+    \ call Check_double_quote()
+
+command! -nargs=0 -bar CheckSingleQuote
+    \ call Check_single_quote() 
 
 " ========  Functions  ========
 function! Nail_trinity_toggle()
@@ -222,6 +225,27 @@ function! Check_double_quote()
 	else
 		" directly insert ""
 		normal! a""
+
+		" move cursor left once
+		let pos = col('.')
+		call cursor('.', pos-1)
+	endif
+endfunction
+
+function! Check_single_quote()
+	let pos = col('.')
+	let tot = col('$')-1
+
+	if pos != tot
+		let next_char = getline('.')[col('.')]
+	endif
+	
+	if pos != tot && next_char == "'"
+		" move cursor right once
+		call cursor('.', pos+1)
+	else
+		" directly insert ''
+		normal! a''
 
 		" move cursor left once
 		let pos = col('.')
