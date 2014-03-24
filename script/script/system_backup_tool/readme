@@ -1,0 +1,7 @@
+
+	1. make a disk partition for system image backup
+	2. put all stuff into that partition
+	3. modify backup.sh/restore.sh to fit your need
+	4. boot from ubuntu live CD
+	5. mount backup partition
+	6. execute backup.sh / restore.sh to backup/restore system
