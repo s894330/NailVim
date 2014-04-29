@@ -179,3 +179,8 @@ let NERDTreeMouseMode = 3
 
 "for trinity
 nnoremap <silent> <F8>   :TrinityToggleAll<CR>
+
+"for tab toggle
+nnoremap <silent> <F7>   :TabToggle<CR>
+inoremap <silent> <C-F7>   <ESC>:TabToggle<CR>a
+

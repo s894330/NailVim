@@ -9,6 +9,7 @@ let loaded_nail_custom = 1
 " ========  Global variables  ========
 let g:trinity_on = 0
 let g:fold_on = 0
+let g:tab_on = 0
 
 " ========  User interfaces  ========
 command! -nargs=0 -bar ExitAll
@@ -30,9 +31,24 @@ command! -nargs=0 -bar CheckDoubleQuote
     \ call Check_double_quote()
 
 command! -nargs=0 -bar CheckSingleQuote
-    \ call Check_single_quote() 
+    \ call Check_single_quote()
+
+command! -nargs=0 -bar TabToggle
+    \ call Tab_Toggle()
 
 " ========  Functions  ========
+function! Tab_Toggle()
+	if g:tab_on == 0
+		echo "using tab on"
+		execute "set shiftwidth=4 | set softtabstop=4 | set noexpandtab"
+		let g:tab_on = 1
+	else
+		echo "using tab off"
+		execute "set shiftwidth=4 | set expandtab"
+		let g:tab_on = 0
+	endif
+endfunction
+
 function! Nail_trinity_toggle()
 	if g:trinity_on == 0
 		"echo "set trinity on to 1"
