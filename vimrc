@@ -157,7 +157,9 @@ set timeoutlen=300
 "set nofoldenable
 
 "expand tab in source code
-autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.java set shiftwidth=4 | set expandtab
+autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.java,*.xml set shiftwidth=4 | set expandtab
+autocmd BufRead,BufNewFile */kernel/*.c,*/kernel/*.h set shiftwidth=4 | set softtabstop=4 | set noexpandtab
+
 "================================================
 
 autocmd VimEnter * call OpenProject()
