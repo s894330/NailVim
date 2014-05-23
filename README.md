@@ -15,8 +15,8 @@ Installation:
 
 	1. sudo apt-get install vim-gnome cscope git astyle
 	2. git clone https://github.com/s894330/NailVim.git
-	3. sudo dpkg -i NailVim/zipFile/exuberant-ctags_5.8-2_amd64.deb
-	4. ./NailVim/script/install.sh
+	3. sudo dpkg -i zipFile/exuberant-ctags_5.8-2_amd64.deb
+	4. ./script/install.sh
 	5. source ~/.bashrc
 
 Usage:
