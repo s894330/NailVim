@@ -28,7 +28,6 @@ $RM ~/.vimrc ~/.vim
 
 # extract bundle files
 echo "extract bundle files"
-$CD $nailVim
 $TARX zipFile/bundle.tar.bz2
 $CD ..
 
