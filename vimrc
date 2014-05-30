@@ -73,6 +73,9 @@ nnoremap <silent> bg Gzz
 nnoremap <silent> f *ggnzz
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
+"pageDown
+nnoremap <silent> b <PageDown>
+nnoremap <silent> bb <PageUp>
 
 "== format file operation ==
 "toggle line number
