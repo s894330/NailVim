@@ -3,4 +3,4 @@
 #	1. define all shared variables
 
 cscopeFile="cscope.out"
-errFile=".errMsg"
+projectFile=".projectVim"

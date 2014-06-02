@@ -11,16 +11,16 @@ ServerID="VIM"
 
 # check if cscope.out is exist
 if [ -f $cscopeFile ]; then	# this is a project folder
-	if [ -f $errFile ]; then	# there is other vim occupy this project
+	if [ -f $projectFile ]; then	# there is other vim occupy this project
 		echo "there is other vim occupy this project, please close it first!!"
 		exit		
 	fi
 	
 	# generate unique server id
-	ServerID=$RANDOM
+	#ServerID=$RANDOM
 
 	# call background update cscope script
-	BackgroundUpdateCScope.sh $ServerID &
+	#BackgroundUpdateCScope.sh $ServerID &
 fi
 
 # save ttyctl setting
