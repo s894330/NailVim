@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ "$1" == "" ] || [ "$2" == "" ]; then
+	echo "usage: wgrep <keyword> <filename>"
+else
+	# replace whitespace
+	filename=keyword_${1// /_}.log
+	
+	grep -nr "$1" $2 > $filename
+	geany $filename &
+fi
+
