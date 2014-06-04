@@ -25,7 +25,11 @@ inoremap <silent> <C-Left> <Esc>:bp<CR>
 "find file
 nnoremap <silent> <C-f> :cs find 6 
 inoremap <silent> <C-f> <Esc>:cs find 6 
-vnoremap <silent> <C-f> <Esc>:cs find 6 
+vnoremap <silent> <C-f> <Esc>:cs find 6
+"search and replace
+nnoremap <silent> <C-g> :%s/
+inoremap <silent> <C-g> <Esc>:%s/
+vnoremap <silent> <C-g> <Esc>:%s/
 
 "== text operation ==
 "copy text
