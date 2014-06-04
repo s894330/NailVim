@@ -13,7 +13,7 @@ Tested OS:
 
 Installation:
 
-	1. sudo apt-get install vim-gnome cscope git astyle
+	1. sudo apt-get install vim-gnome cscope git astyle geany
 	2. git clone https://github.com/s894330/NailVim.git
 	3. sudo dpkg -i zipFile/exuberant-ctags_5.8-2_amd64.deb
 	4. ./script/install.sh
