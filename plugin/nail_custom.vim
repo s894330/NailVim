@@ -36,6 +36,9 @@ command! -nargs=0 -bar CheckSingleQuote
 command! -nargs=0 -bar TabToggle
     \ call Tab_Toggle()
 
+command! -nargs=0 -bar ResetCscope
+    \ call Reset_Cscope()
+
 " ========  Functions  ========
 function! Tab_Toggle()
 	if g:tab_on == 0
@@ -70,7 +73,8 @@ function! Nail_Exit_All()
 	endif
 endfunction
 
-function! ResetCscope()
+function! Reset_Cscope()
+	cscope -bCkR -i $PWD/cscope.files -f $PWD/cscope.out
 	cscope kill -1
 	cscope add $PWD/cscope.out
 endfunction

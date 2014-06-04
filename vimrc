@@ -127,6 +127,9 @@ inoremap ' <Esc>:CheckSingleQuote<CR>a
 inoremap " <Esc>:CheckDoubleQuote<CR>a
 inoremap ) <Esc>:CheckLittleBracket<CR>a)
 inoremap ] <Esc>:CheckMiddleBracket<CR>a]
+
+"reload cscope
+nnoremap <silent> <F12> :ResetCscope<CR>
 "================================================
 
 "====== Set general vim property  ===============
