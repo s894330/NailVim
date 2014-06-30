@@ -6,7 +6,7 @@ else
 	# replace whitespace
 	filename=keyword_${1// /_}.log
 	
-	grep -nr "$1" $2 > $filename
+	grep "$1" $2 > $filename
 	geany $filename &
 fi
 
