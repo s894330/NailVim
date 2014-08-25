@@ -123,6 +123,7 @@ inoremap <silent> <C-p> <Esc>:w!<CR>:!clear && make && ./a.out<CR>
 "auto close
 inoremap ( ()<Left>
 inoremap [ []<Left>
+inoremap < <><Left>
 inoremap { {<CR>}<Esc>ko
 inoremap <C-w> /*<Space><Space>*/<Left><Left><Left>
 nnoremap <C-w> i/*<Space><Space>*/<Left><Left><Left>
@@ -131,6 +132,7 @@ inoremap ' <Esc>:CheckSingleQuote<CR>a
 inoremap " <Esc>:CheckDoubleQuote<CR>a
 inoremap ) <Esc>:CheckLittleBracket<CR>a)
 inoremap ] <Esc>:CheckMiddleBracket<CR>a]
+inoremap > <Esc>:CheckArrowBracket<CR>a>
 
 "reload cscope
 nnoremap <silent> <F12> :ResetCscope<CR>
