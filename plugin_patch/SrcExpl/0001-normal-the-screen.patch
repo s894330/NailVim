@@ -1,0 +1,39 @@
+From e1a97398e1410b0272e1a55d74217a81ba621bea Mon Sep 17 00:00:00 2001
+From: "nail.hsiao" <nail.hsiao@acer.com>
+Date: Fri, 14 Nov 2014 11:38:17 +0800
+Subject: [PATCH] normal the screen
+ [Project][Branch][Component][BugID(optional)] Summary
+
+Why:
+How:
+Verify steps: N/A
+Possible effects:
+---
+ plugin/srcexpl.vim |    4 ++++
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+
+diff --git a/plugin/srcexpl.vim b/plugin/srcexpl.vim
+index e86fe61..d4ab9c9 100644
+--- a/plugin/srcexpl.vim
++++ b/plugin/srcexpl.vim
+@@ -449,6 +449,8 @@ function! g:SrcExpl_Jump()
+         call <SID>SrcExpl_TagSth(l:expr)
+     endif
+ 
++    normal! zz
++
+     return 0
+ 
+ endfunction " }}}
+@@ -860,6 +862,8 @@ function! <SID>SrcExpl_GetMarkList()
+     exe "edit " . get(g:SrcExpl_markList, -1)[0]
+     " Jump to the context position of that symbol
+     call cursor(get(g:SrcExpl_markList, -1)[1], get(g:SrcExpl_markList, -1)[2])
++    " center the screen
++    normal! zz
+     " Remove the latest mark now
+     call remove(g:SrcExpl_markList, -1)
+ 
+-- 
+1.7.5.4
+
