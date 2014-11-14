@@ -21,7 +21,7 @@ Installation:
 
 Apply patch:
 	1. cd ~/.vim
-	2. go into bundle -> "each bundle""
+	2. go into bundle -> <each bundle>
 	3. type "git am <patches under "patch_bundle" folder>" if there is corresponding patches
 
 Usage:
