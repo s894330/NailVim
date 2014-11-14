@@ -19,6 +19,11 @@ Installation:
 	4. ./script/install.sh
 	5. source ~/.bashrc
 
+Apply patch:
+	1. cd ~/.vim
+	2. go into bundle -> <each bundle>
+	3. type "git am <patches under "patch_bundle" folder>" if there is corresponding patches
+
 Usage:
 
 	1. go into project root path
