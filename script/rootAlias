@@ -2,11 +2,8 @@
 alias ai='apt-get install'
 alias c='clear'
 alias b='shutdown -h now'
-alias bbb='	echo -n "mount sda8..." && 
-		mount /dev/sda8 /opt/sda8 && 
-		echo "done" &&
-		echo -n "copying xp.vdi..." &&
-		cp /opt/OA_XP/XP.vdi /opt/sda8/ &&
+alias bbb='	echo -n "backup xp.vdi..." &&
+		cp /opt/sdb1/XP.vdi /opt/OA_XP/XP.vdi.back &&
 		echo "done" &&
 		echo -n "syncing..." &&
 		sync && sync && sync &&
@@ -19,5 +16,6 @@ alias q='exit'
 #alias vi='vim.sh'
 
 alias s='sync && sync && sync'
+alias sb='sync && sync && sync && shutdown -h now'
 alias aks='adb kill-server'
 alias ass='adb start-server'
