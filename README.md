@@ -8,8 +8,9 @@ Purpose:
 
 Tested OS:
 
-	1. Ubuntu 11.10 64bit
-	2. Ubutnu 12.04.3 64 bit
+	1. Ubuntu 11.10 64 bit
+	2. Ubuntu 12.04.3 64 bit
+	3. Ubuntu 14.04.1 64 bit
 
 Installation:
 
