@@ -1,5 +1,6 @@
 
 alias vi='vim.sh'
+alias vim='vim.sh'
 alias ai='sudo apt-get install'
 alias sd='sudo su'
 alias lm='ls -alh | less'

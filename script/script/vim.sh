@@ -28,7 +28,7 @@ STTYOPTS="$(stty --save)"
 stty stop '' -ixoff -ixon
 
 # call vim
-vim --servername $ServerID $@
+vim $@
    
 # restore ttyctl setting
 stty "$STTYOPTS"
