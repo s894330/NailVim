@@ -27,6 +27,9 @@ command! -nargs=0 -bar CheckLittleBracket
 command! -nargs=0 -bar CheckMiddleBracket
     \ call Check_middle_bracket()
 
+command! -nargs=0 -bar CheckSemiColon
+    \ call Check_semi_colon()
+
 command! -nargs=0 -bar CheckArrowBracket
     \ call Check_arrow_bracket()
 
@@ -204,6 +207,33 @@ function! Check_middle_bracket()
 		let char = getline('.')[col('.')-1]
 
 		if char == ']'
+			let pos1 = col('.')
+			normal! x
+			let pos2 = col('.')
+
+			if pos1 == pos2
+				" move cursor left once
+				call cursor('.', pos1-1)
+			endif
+		else
+			" move cursor left once
+			call cursor('.', pos)
+		endif		
+	endif
+endfunction
+
+function! Check_semi_colon()
+	let pos = col('.')
+	let tot = col('$')-1
+
+	if pos != tot
+		" move cursor right once
+		call cursor('.', pos+1)
+
+		" get charactor under cursor
+		let char = getline('.')[col('.')-1]
+
+		if char == ';'
 			let pos1 = col('.')
 			normal! x
 			let pos2 = col('.')

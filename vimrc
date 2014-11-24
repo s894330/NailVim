@@ -132,6 +132,7 @@ inoremap ' <Esc>:CheckSingleQuote<CR>a
 inoremap " <Esc>:CheckDoubleQuote<CR>a
 inoremap ) <Esc>:CheckLittleBracket<CR>a)
 inoremap ] <Esc>:CheckMiddleBracket<CR>a]
+inoremap ; <Esc>:CheckSemiColon<CR>a;
 "inoremap > <Esc>:CheckArrowBracket<CR>a>
 
 "reload cscope
