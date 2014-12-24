@@ -18,7 +18,9 @@ Installation:
 	2. git clone https://github.com/s894330/NailVim.git
 	(deprecate)3. sudo dpkg -i zipFile/exuberant-ctags_5.8-2_amd64.deb
 	4. ./script/install.sh
-	5. source ~/.bashrc
+	5. git submodule init
+	6. git submodule update
+	7. source ~/.bashrc
 
 Apply patch:
 	1. cd ~/.vim
