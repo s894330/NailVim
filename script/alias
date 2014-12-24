@@ -56,14 +56,15 @@ alias cscope='cscope -p8'
 alias rmi='rm -i'
 alias changetool='sudo update-alternatives --config'
 
-export PATH=$PATH:/opt/android/sdk/platform-tools:/opt/jdk1.6.0_43/bin
+#export PATH=$PATH:/opt/android/sdk/platform-tools:/opt/jdk1.6.0_43/bin
+export PATH=$PATH:/opt/android/sdk/platform-tools
 
 #for speeding up Android source build
 export CCACHE_DIR=/opt/.ccache
 
 #for Sun Java environment
-export JAVA_HOME=/opt/jdk1.6.0_43
-export CLASSPATH=$JAVA_HOME/lib:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+#export JAVA_HOME=/opt/jdk1.6.0_43
+#export CLASSPATH=$JAVA_HOME/lib:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
 #for vim volor
 #export TERM=xterm-256color
