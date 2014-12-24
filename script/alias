@@ -54,6 +54,7 @@ alias ua='uname -a'
 alias al='adb logcat -v time'
 alias cscope='cscope -p8'
 alias rmi='rm -i'
+alias changetool='sudo update-alternatives --config'
 
 export PATH=$PATH:/opt/android/sdk/platform-tools:/opt/jdk1.6.0_43/bin
 
