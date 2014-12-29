@@ -176,6 +176,9 @@ autocmd BufRead,BufNewFile *.java,*.xml set shiftwidth=4 | set expandtab
 "autocmd BufRead,BufNewFile */kernel/*.c,*/kernel/*.h set shiftwidth=4 | set softtabstop=4 | set noexpandtab
 autocmd BufRead,BufNewFile *.c,*.h,*.cpp set shiftwidth=4 | set softtabstop=4 | set noexpandtab
 
+"set line 80 color
+autocmd BufRead,BufNewFile * setlocal colorcolumn=80
+
 "================================================
 
 autocmd VimEnter * call OpenProject()
