@@ -19,3 +19,4 @@ alias s='sync && sync && sync'
 alias sb='sync && sync && sync && shutdown -h now'
 alias aks='adb kill-server'
 alias ass='adb start-server'
+export PATH=$PATH:/opt/android/sdk/platform-tools
