@@ -8,5 +8,5 @@
 	ignore = dirty
 [submodule "bundle/butane"]
 	path = bundle/butane
-	url = git@github.com:vim-scripts/butane.vim.git
+	url = https://github.com/vim-scripts/butane.vim.git
 	ignore = dirty
