@@ -2,14 +2,14 @@
 alias ai='apt-get install'
 alias c='clear'
 alias b='shutdown -h now'
-alias bbb='	echo -n "backup xp.vdi..." &&
-		cp /opt/sdb1/XP.vdi /opt/OA_XP/XP.vdi.back &&
-		echo "done" &&
-		echo -n "syncing..." &&
-		sync && sync && sync &&
-		echo "done" &&
-		echo "goodbye !!" && shutdown -h now		
-	'
+#alias bbb='	echo -n "backup xp.vdi..." &&
+#		cp /opt/sdb1/XP.vdi /opt/OA_XP/XP.vdi.back &&
+#		echo "done" &&
+#		echo -n "syncing..." &&
+#		sync && sync && sync &&
+#		echo "done" &&
+#		echo "goodbye !!" && shutdown -h now		
+#	'
 alias r='reboot'
 alias q='exit'
 #alias rm='rm -i'
