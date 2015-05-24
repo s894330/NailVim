@@ -7,7 +7,7 @@ echo -n "remove old files..."
 rm -rf $CTAG_FILE $CTAG_FILE_FOR_CSCOPE $CSCOPE_FILE cscope.* tags
 echo "done !!"
 
-echo -n "generate ctag file..."
+echo -n "generating ctag file..."
 # for reference: add " at begin and end when execute find
 #find . \( -path './build' -o -path './cts' -o -path './docs' -o -path './gdk' -o -path './ndk' -o -path './pdk' -o -path './prebuilts' -o -path './sdk' -o -path './tools' \) -a -prune -o -iname *.java -o -iname *.cpp -o -iname *.c -o -iname *.h -type f -exec echo \"{}\" \; > cscope.files
 
@@ -17,7 +17,7 @@ find . \( -path './build' -o -path './cts' -o -path './docs' -o -path './gdk' -o
 ctags -L $CTAG_FILE
 echo "done !!"
 
-echo -n "generate cscope file..."
+echo -n "generating cscope file..."
 sed 's/^/"/;s/$/"/' $CTAG_FILE > $CSCOPE_FILE
 cscope -bCkR -i $CSCOPE_FILE >/dev/null 2>&1
 #rm -rf $CTAG_FILE
