@@ -158,9 +158,9 @@ function! CodeFormat()
 
 	"formatting
 	if &filetype == 'c' || &filetype == 'cpp'	".h file will recognize to .cpp
-		exec "%! astyle --style=kr --indent=spaces=4 --indent-col1-comments --min-conditional-indent=0 --max-instatement-indent=40 --break-blocks --pad-oper --pad-header --unpad-paren --delete-empty-lines --align-pointer=name --convert-tabs"
+		exec "%! /usr/local/bin/astyle --style=kr --indent=spaces=4 --break-blocks --pad-oper --pad-header --unpad-paren --delete-empty-lines --align-pointer=name --align-reference=name --remove-brackets --max-code-length=80"
 	elseif &filetype == 'java'
-		exec "%! astyle --style=java --indent=spaces=4 --indent-col1-comments --min-conditional-indent=0 --max-instatement-indent=40 --break-blocks --pad-oper --pad-header --unpad-paren --delete-empty-lines --align-pointer=name --convert-tabs"
+		exec "%! /usr/local/bin/astyle --style=java --indent=spaces=4 --break-blocks --pad-oper --pad-header --unpad-paren --delete-empty-lines --align-pointer=name --align-reference=name --remove-brackets --max-code-length=80"
     else 
 		echo "not supported filetype: ".&filetype
     endif
@@ -175,9 +175,9 @@ function! CodeFormatLinuxStyle()
 
 	"formatting
 	if &filetype == 'c' || &filetype == 'cpp'	".h file will recognize to .cpp
-		exec "%! astyle --style=kr --indent=spaces=8 --indent-col1-comments --min-conditional-indent=0 --max-instatement-indent=40 --break-blocks --pad-oper --pad-header --unpad-paren --delete-empty-lines --align-pointer=name --convert-tabs"
+		exec "%! /usr/local/bin/astyle --style=linux --indent=tab=8 --break-blocks --pad-oper --pad-header --unpad-paren --delete-empty-lines --align-pointer=name --align-reference=name --remove-brackets --max-code-length=80"
 	elseif &filetype == 'java'
-		exec "%! astyle --style=java --indent=spaces=4 --indent-col1-comments --min-conditional-indent=0 --max-instatement-indent=40 --break-blocks --pad-oper --pad-header --unpad-paren --delete-empty-lines --align-pointer=name --convert-tabs"
+		exec "%! /usr/local/bin/astyle --style=java --indent=spaces=4 --break-blocks --pad-oper --pad-header --unpad-paren --delete-empty-lines --align-pointer=name --align-reference=name --remove-brackets --max-code-length=80"
     else 
 		echo "not supported filetype: ".&filetype
     endif
