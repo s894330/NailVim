@@ -174,10 +174,10 @@ function! CodeFormatLinuxStyle()
 	let lineNum = line(".")
 
 	"formatting
-	if &filetype == 'c'
-		exec "%! astyle --style=kr --indent=spaces=8 --attach-namespaces --attach-classes --indent-preproc-define --indent-col1-comments --min-conditional-indent=0 --max-instatement-indent=40 --break-blocks --pad-oper --pad-header --unpad-paren --delete-empty-lines --align-pointer=name --align-reference=name --convert-tabs --close-templates --break-after-logical"
-	elseif &filetype == 'cpp'	".h file will recognize to .cpp
-		exec "%! astyle --style=kr --indent=spaces=4 --attach-namespaces --attach-classes --indent-preproc-define --indent-col1-comments --min-conditional-indent=0 --max-instatement-indent=40 --break-blocks --pad-oper --pad-header --unpad-paren --delete-empty-lines --align-pointer=name --align-reference=name --convert-tabs --close-templates --break-after-logical"
+	if &filetype == 'c' || &filetype == 'cpp'	".h file will recognize to .cpp
+		exec "%! astyle --style=kr --indent=spaces=8 --indent-col1-comments --min-conditional-indent=0 --max-instatement-indent=40 --break-blocks --pad-oper --pad-header --unpad-paren --delete-empty-lines --align-pointer=name --convert-tabs"
+	elseif &filetype == 'java'
+		exec "%! astyle --style=java --indent=spaces=4 --indent-col1-comments --min-conditional-indent=0 --max-instatement-indent=40 --break-blocks --pad-oper --pad-header --unpad-paren --delete-empty-lines --align-pointer=name --convert-tabs"
     else 
 		echo "not supported filetype: ".&filetype
     endif
