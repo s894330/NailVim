@@ -93,7 +93,7 @@ vnoremap <silent> <Tab> >
 vnoremap <silent> <S-Tab> <
 
 "== cursor movement =="
-nnoremap <silent> i <Up> 
+nnoremap <silent> i <Up>
 "can not mapping ctrl+i, the behavior of ctrl + i is the same as <tab>
 "you can use <alt> + i instead
 "inoremap <silent> <C-i> <Up>
