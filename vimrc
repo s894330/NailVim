@@ -125,7 +125,7 @@ inoremap <silent> <C-p> <Esc>:w!<CR>:!clear && make && ./a.out<CR>
 inoremap ( ()<Left>
 inoremap [ []<Left>
 "inoremap < <><Left>
-inoremap { {<CR>}<Esc>ko
+inoremap { {<CR>}<Esc>ko<TAB>
 inoremap <C-w> /*<Space><Space>*/<Left><Left><Left>
 nnoremap <C-w> i/*<Space><Space>*/<Left><Left><Left>
 
