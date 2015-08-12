@@ -116,7 +116,8 @@ vnoremap <silent> <C-b>       mZ:call ToggleComment_toggle()<CR>`Z
 "folding
 "nnoremap <silent> ff :ToggleFold<CR>
 "format coding style
-nnoremap <silent> ss :CodeFormat<CR>
+"nnoremap <silent> ss :CodeFormat<CR>
+nnoremap <silent> ss :CodeFormatLinuxStyle<CR>
 nnoremap <silent> ff :CodeFormatLinuxStyle<CR>
 "auto make and run
 nnoremap <silent> <C-p> :w!<CR>:!clear && make && ./a.out<CR>

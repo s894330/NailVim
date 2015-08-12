@@ -175,6 +175,21 @@ function! CodeFormatLinuxStyle()
 
 	"formatting
 	if &filetype == 'c' || &filetype == 'cpp'	".h file will recognize to .cpp
+		exec "%! /usr/bin/indent -kr -i8 -ts8 -sob -l80 -ss -bs -psl"
+	else 
+		echo "not supported filetype: ".&filetype
+    endif
+
+    "return to original line
+    exec lineNum
+endfunction
+
+function! CodeFormatLinuxStyleOld()
+	"get current line number
+	let lineNum = line(".")
+
+	"formatting
+	if &filetype == 'c' || &filetype == 'cpp'	".h file will recognize to .cpp
 		exec "%! /usr/local/bin/astyle --style=linux --indent=tab=8 --break-blocks --pad-oper --pad-header --unpad-paren --delete-empty-lines --align-pointer=name --align-reference=name --remove-brackets --max-code-length=80"
 	elseif &filetype == 'java'
 		exec "%! /usr/local/bin/astyle --style=java --indent=spaces=4 --break-blocks --pad-oper --pad-header --unpad-paren --delete-empty-lines --align-pointer=name --align-reference=name --remove-brackets --max-code-length=80"
