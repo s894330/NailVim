@@ -175,7 +175,8 @@ function! CodeFormatLinuxStyle()
 
 	"formatting
 	if &filetype == 'c' || &filetype == 'cpp'	".h file will recognize to .cpp
-		exec "%! /usr/bin/indent -kr -i8 -ts8 -sob -l80 -ss -bs -psl"
+		"exec "%! /usr/bin/indent -kr -i8 -ts8 -sob -l80 -ss -bs -psl"
+		exec "%! /usr/bin/indent --linux-style"
 	else 
 		echo "not supported filetype: ".&filetype
     endif
