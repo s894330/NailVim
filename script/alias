@@ -2,6 +2,7 @@
 alias vi='vim.sh'
 #alias vim='vim.sh'
 alias ai='sudo apt-get install'
+alias aks='adb kill-server'
 alias sd='sudo su'
 alias lm='ls -alh | less'
 alias tarx='tar xvf'
