@@ -14,7 +14,7 @@ Tested OS:
 
 Installation:
 
-	1. sudo apt-get install vim-gnome cscope ctags git astyle compizconfig-settings-manager compiz-plugins-extra synaptic stardict geany putty meld filezilla claws-mail openjdk-7-jdk bison gcc-multilib g++-multilib gperf libxml2-utils make python-networkx zlib1g-dev:i386 zip kernel-package libncurses5-dev tree gitk git-email sparse indent aptitude uuid uuid-dev zlib1g-dev liblz-dev liblzo2-2 liblzo2-dev lzop curl git-core gparted
+	1. sudo apt-get install vim-gnome cscope ctags git astyle compizconfig-settings-manager compiz-plugins-extra synaptic stardict geany putty meld filezilla claws-mail openjdk-7-jdk bison gcc-multilib g++-multilib gperf libxml2-utils make python-networkx zlib1g-dev:i386 zip kernel-package libncurses5-dev tree gitk git-email sparse indent aptitude liblz-dev curl git-core gparted
 	2. git clone https://github.com/s894330/NailVim.git
 	(deprecate)3. sudo dpkg -i zipFile/exuberant-ctags_5.8-2_amd64.deb
 	4. ./script/install.sh
