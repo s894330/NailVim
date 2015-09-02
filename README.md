@@ -11,21 +11,22 @@ Tested OS:
 	1. Ubuntu 11.10 64 bit
 	2. Ubuntu 12.04.3 64 bit
 	3. Ubuntu 14.04.1 64 bit
+	4. Ubuntu 14.04.3 64 bit
 
 Installation:
 
-	1. sudo apt-get install vim-gnome cscope ctags git astyle compizconfig-settings-manager compiz-plugins-extra synaptic stardict geany putty meld filezilla claws-mail openjdk-7-jdk bison gcc-multilib g++-multilib gperf libxml2-utils make python-networkx zlib1g-dev:i386 zip kernel-package libncurses5-dev tree gitk git-email sparse indent aptitude liblz-dev curl git-core gparted
-	2. git clone https://github.com/s894330/NailVim.git
-	(deprecate)3. sudo dpkg -i zipFile/exuberant-ctags_5.8-2_amd64.deb
-	4. ./script/install.sh
-	5. git submodule init
-	6. git submodule update
-	7. source ~/.bashrc
-
-Apply patch:
-	1. cd ~/.vim
-	2. go into bundle -> "each bundle"
-	3. type "git am <patches under "patch_bundle" folder>" if there is corresponding patches
+	1. sudo apt-get install vim-gnome cscope ctags git astyle compizconfig-settings-manager compiz-plugins-extra synaptic stardict geany putty meld filezilla claws-mail openjdk-7-jdk bison gcc-multilib g++-multilib gperf libxml2-utils make python-networkx zlib1g-dev:i386 zip kernel-package libncurses5-dev tree gitk git-email sparse indent aptitude liblz-dev curl git-core gparted roxterm terminator pcmanx-gtk2 fonts-arphic-ukai ibus-chewing android-tools-adb
+	2. cd /opt
+	3. git clone https://github.com/s894330/NailVim.git
+	4. cd NailVim
+	5. ./script/install.sh
+	6. cd ~/.vim
+	7. git submodule init
+	8. git submodule update
+	9. cd bundle/SrcExpl
+	10. git am ../../patch_bundle/SrcExpl/0001-xxxxxxx.patch
+	11. git am --abort
+	12. source ~/.bashrc
 
 Usage:
 
