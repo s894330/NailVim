@@ -15,7 +15,7 @@ Tested OS:
 
 Installation:
 
-	1. sudo apt-get install vim-gnome cscope ctags git astyle compizconfig-settings-manager compiz-plugins-extra synaptic stardict geany putty meld filezilla claws-mail openjdk-7-jdk bison gcc-multilib g++-multilib gperf libxml2-utils make python-networkx zlib1g-dev:i386 zip kernel-package libncurses5-dev tree gitk git-email sparse indent aptitude liblz-dev curl git-core gparted roxterm terminator pcmanx-gtk2 fonts-arphic-ukai ibus-chewing android-tools-adb
+	1. sudo apt-get install vim-gnome cscope ctags git astyle compizconfig-settings-manager compiz-plugins-extra synaptic stardict geany putty meld filezilla claws-mail openjdk-7-jdk bison gcc-multilib g++-multilib gperf libxml2-utils make python-networkx zlib1g-dev:i386 zip kernel-package libncurses5-dev tree gitk git-email sparse indent aptitude liblz-dev curl git-core gparted roxterm terminator pcmanx-gtk2 fonts-arphic-ukai ibus-chewing android-tools-adb wine
 	2. cd /opt
 	3. git clone https://github.com/s894330/NailVim.git
 	4. cd NailVim
