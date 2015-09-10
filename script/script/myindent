@@ -1,0 +1,19 @@
+#!/bin/bash
+if [ "$1" == "" ] || [ "$2" == "" ]; then
+	echo "usage: myindent <style> <path>"
+	echo "<style> currently support \"linux\" (for .c .h)"
+else
+	case $1 in
+	linux )
+		for file in `find $2 -name "*.c" -o -name "*.h"`
+		do
+			echo "indent $file"
+			indent --linux-style $file
+			rm -rf $file~
+		done ;;
+	*)
+		echo "invalid style!" ;;
+	esac
+	echo "done"
+fi
+
