@@ -10,7 +10,7 @@ TARX="tar -xf"
 LN="ln -s"
 MKDIR="mkdir"
 
-echo "Setup vim..."
+sudo echo "Setup vim..."
 
 # backup user original setting first
 echo "backup .vimrc"
@@ -50,6 +50,15 @@ do
 	fi
 done
 
+echo "init git submodule"
+$CD ~/.vim
+git submodule init
+git submodule update
+$CD bundle/SrcExpl
+git am ../../patch_bundle/SrcExpl/0001-normal-the-screen.patch
+git am --abort
+$CD ../..
+
 echo "Setup environment..."
 if [ -f ~/.bashrc_backup ]; then
 	$CP ~/.bashrc_backup ~/.bashrc
@@ -57,7 +66,8 @@ else
 	$CP ~/.bashrc ~/.bashrc_backup
 fi
 # setup ~/.bashrc and root bashrc
-cat $nailVim/script/alias >> ~/.bashrc
-#sudo cat $nailVim/script/rootAlias >> /etc/bash.bashrc
+cat script/alias >> ~/.bashrc
+sudo cat script/rootAlias >> /etc/bash.bashrc
+
 echo "done!!"
 echo "please execute \"source ~/.bashrc\" and then enjoy it !!"
