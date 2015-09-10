@@ -10,18 +10,16 @@ TARX="tar -xf"
 LN="ln -s"
 MKDIR="mkdir"
 
-sudo echo "Setup vim..."
+echo "Setup vim..."
 
 # backup user original setting first
-echo "backup .vimrc"
-if [ -f ~/.vimrc ]; then
-	$RM ~/.vimrc_backup
+if ! [ -f ~/.vimrc_backup ]; then
+	echo "backup .vimrc"
 	$CP ~/.vimrc ~/.vimrc_backup
 fi
 
-echo "backup .vim"
-if [ -d ~/.vim ]; then
-	$RM ~/.vim_backup
+if ! [ -d ~/.vim_backup ]; then
+	echo "backup .vim"
 	$CP ~/.vim ~/.vim_backup
 fi
 $RM ~/.vimrc ~/.vim
@@ -61,13 +59,17 @@ $CD ../..
 
 echo "Setup environment..."
 if [ -f ~/.bashrc_backup ]; then
+	echo "restore ~/.bashrc"
 	$CP ~/.bashrc_backup ~/.bashrc
 else
+	echo "backup ~/.bashrc"
 	$CP ~/.bashrc ~/.bashrc_backup
 fi
 # setup ~/.bashrc and root bashrc
+echo "apply alias into ~/.bashrc"
 cat script/alias >> ~/.bashrc
-sudo cat script/rootAlias >> /etc/bash.bashrc
+#sudo cat script/rootAlias >> /etc/bash.bashrc
 
 echo "done!!"
+echo "please apply script/rootAlias into /etc/bash.bashrc manually"
 echo "please execute \"source ~/.bashrc\" and then enjoy it !!"
