@@ -166,6 +166,9 @@ colorscheme nail-color
 "shorten the key timeout time
 set timeoutlen=300
 
+"auto comment
+set formatoptions+=r
+
 "set fold method
 "set foldmethod=marker
 "set foldmarker={,}
