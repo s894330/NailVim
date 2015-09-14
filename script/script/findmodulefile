@@ -6,7 +6,7 @@
 
 if [ "$1" == "" ]; then
 	echo "this command only works at kernel git tree folder"
-	echo "usage: ggrep <driver name>"
+	echo "usage: findmodulefile <driver name>"
 else
 	git grep $1 -- '*Makefile'
 fi
