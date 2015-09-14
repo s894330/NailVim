@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# this script search c files that are compiled into the driver which
+# you use lsmod to see
+# this script only work at kernel git tree
+
+if [ "$1" == "" ]; then
+	echo "this command only works at kernel git tree folder"
+	echo "usage: ggrep <driver name>"
+else
+	git grep $1 -- '*Makefile'
+fi
+
