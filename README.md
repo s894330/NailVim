@@ -20,13 +20,7 @@ Installation:
 	3. git clone https://github.com/s894330/NailVim.git
 	4. cd NailVim
 	5. ./script/install.sh
-	6. cd ~/.vim
-	7. git submodule init
-	8. git submodule update
-	9. cd bundle/SrcExpl
-	10. git am ../../patch_bundle/SrcExpl/0001-xxxxxxx.patch
-	11. git am --abort
-	12. source ~/.bashrc
+	6. source ~/.bashrc
 
 Usage:
 
