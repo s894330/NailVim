@@ -16,6 +16,7 @@ alias g++='g++ -Wall'
 alias gcc='gcc -Wall'
 
 alias gs='git status'
+alias gsc='git show --check'
 alias ga='git add'
 alias gau='git add -u'
 alias gr='git rm'
