@@ -114,11 +114,16 @@ nnoremap <silent> <C-b>       mZ:call ToggleComment_toggle()<CR>`Z
 inoremap <silent> <C-b>       <Esc>mZ:call ToggleComment_toggle()<CR>`Za<Left>
 vnoremap <silent> <C-b>       mZ:call ToggleComment_toggle()<CR>`Z
 "folding
-"nnoremap <silent> ff :ToggleFold<CR>
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
+nnoremap <silent> ff :ToggleFold<CR>
+nnoremap <silent> fg zR	"unfold all
 "format coding style
 "nnoremap <silent> ss :CodeFormat<CR>
 nnoremap <silent> ss :CodeFormatLinuxStyle<CR>
-nnoremap <silent> ff :CodeFormatLinuxStyle<CR>
+"nnoremap <silent> ff :CodeFormatLinuxStyle<CR> (this conflit with folding feature)
 "auto make and run
 nnoremap <silent> <C-p> :w!<CR>:!clear && make && ./a.out<CR>
 inoremap <silent> <C-p> <Esc>:w!<CR>:!clear && make && ./a.out<CR>
