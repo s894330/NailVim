@@ -113,20 +113,26 @@ inoremap <silent> <C-o> <PageDown>
 nnoremap <silent> <C-b>       mZ:call ToggleComment_toggle()<CR>`Z
 inoremap <silent> <C-b>       <Esc>mZ:call ToggleComment_toggle()<CR>`Za<Left>
 vnoremap <silent> <C-b>       mZ:call ToggleComment_toggle()<CR>`Z
+
 "folding
-set foldmethod=indent   "fold based on indent
+set foldmethod=marker
+set foldmarker={,}
+"set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 nnoremap <silent> ff :ToggleFold<CR>
 nnoremap <silent> fg zR	"unfold all
+
 "format coding style
 "nnoremap <silent> ss :CodeFormat<CR>
 nnoremap <silent> ss :CodeFormatLinuxStyle<CR>
 "nnoremap <silent> ff :CodeFormatLinuxStyle<CR> (this conflit with folding feature)
+
 "auto make and run
 nnoremap <silent> <C-p> :w!<CR>:!clear && make && ./a.out<CR>
 inoremap <silent> <C-p> <Esc>:w!<CR>:!clear && make && ./a.out<CR>
+
 "auto close
 inoremap ( ()<Left>
 inoremap [ []<Left>
@@ -173,11 +179,6 @@ set timeoutlen=300
 
 "auto comment
 set formatoptions+=r
-
-"set fold method
-"set foldmethod=marker
-"set foldmarker={,}
-"set nofoldenable
 
 "expand tab in source code
 "autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.java,*.xml set shiftwidth=4 | set expandtab
