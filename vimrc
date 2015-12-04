@@ -72,14 +72,16 @@ nnoremap <silent> <Backspace> a<Left><Backspace>
 "enable space in normal mode
 nnoremap <silent> w<Space> a<Left><Space>
 "fast to file end
-nnoremap <silent> bg Gzz
+nnoremap <silent> bb Gzz
+"fast to file start
+nnoremap <silent> gg 1G
 "maps f to first keyword
 nnoremap <silent> f *ggnzz
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
 "pageDown
 nnoremap <silent> b <PageDown>
-nnoremap <silent> bb <PageUp>
+nnoremap <silent> g <PageUp>
 
 "== format file operation ==
 "toggle line number
