@@ -1,6 +1,7 @@
 #!/bin/bash
 
 CTAG_FILE="ctag.files"
+CTAG_FILE_FOR_CSCOPE="ctag.files.forcscope"
 CSCOPE_FILE="cscope.files"
 
 echo -n "remove old files..."
@@ -12,13 +13,16 @@ echo -n "generating ctag file..."
 #find . \( -path './build' -o -path './cts' -o -path './docs' -o -path './gdk' -o -path './ndk' -o -path './pdk' -o -path './prebuilts' -o -path './sdk' -o -path './tools' \) -a -prune -o -iname *.java -o -iname *.cpp -o -iname *.c -o -iname *.h -type f -exec echo \"{}\" \; > cscope.files
 
 # for ctag use
-find . \( -path './build' -o -path './cts' -o -path './docs' -o -path './gdk' -o -path './ndk' -o -path './pdk' -o -path './prebuilts' -o -path './sdk' -o -path './tools' -o -path './out' \) -a -prune -o -type f -iname '*.java' -o -type f -iname '*.cpp' -o -type f -iname '*.c' -o -type f -iname '*.h' -o -type f -iname '*.conf*' -o -type f -iname '*.xml' -o -type f -iname '*.dts*' -o -type f -iname '*.aidl' -o -type f -iname '*.S' -o -type f -iname '*.rc' -o -type f -iname '*.mk' -o -type f -iname '*.txt' -o -type f -iname '*.tbl' -o -type f -iname 'Kconfig' -o -type f -iname 'Makefile' | sed "s:./::" | sed "s:^:`pwd`/:" > $CTAG_FILE
+find . \( -path './build' -o -path './cts' -o -path './docs' -o -path './gdk' -o -path './ndk' -o -path './pdk' -o -path './prebuilts' -o -path './sdk' -o -path './tools' -o -path './out' \) -a -prune -o -type f -iname '*.java' -o -type f -iname '*.cpp' -o -type f -iname '*.c' -o -type f -iname '*.h' -o -type f -iname '*.conf*' -o -type f -iname '*.xml' -o -type f -iname '*.dts*' -o -type f -iname '*.aidl' -o -type f -iname '*.S' -o -type f -iname '*.rc' -o -type f -iname '*.mk' -o -type f -iname '*.txt' -o -type f -iname '*.tbl' -o -type f -iname 'Kconfig' -o -type f -iname 'Makefile' | sed "s:./::" > $CTAG_FILE
+
+# for cscope use
+cat $CTAG_FILE | sed "s:^:`pwd`/:" > $CTAG_FILE_FOR_CSCOPE
 
 ctags -L $CTAG_FILE
 echo "done !!"
 
 echo -n "generating cscope file..."
-sed 's/^/"/;s/$/"/' $CTAG_FILE > $CSCOPE_FILE
+sed 's/^/"/;s/$/"/' $CTAG_FILE_FOR_CSCOPE > $CSCOPE_FILE
 cscope -bCkR -i $CSCOPE_FILE >/dev/null 2>&1
-#rm -rf $CTAG_FILE
+rm -rf $CTAG_FILE_FOR_CSCOPE $CTAG_FILE $CSCOPE_FILE
 echo "done !!"
