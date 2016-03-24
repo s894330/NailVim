@@ -20,8 +20,12 @@ inoremap <silent> <F5> <Esc>:e!<CR>
 "switch buffer
 nnoremap <silent> <C-Right> :bn<CR>
 inoremap <silent> <C-Right> <Esc>:bn<CR>
+nnoremap <silent> <C-RightMouse> :bn<CR>
+inoremap <silent> <C-RightMouse> <Esc>:bn<CR>
 nnoremap <silent> <C-Left> :bp<CR>
 inoremap <silent> <C-Left> <Esc>:bp<CR>
+nnoremap <silent> <C-LeftMouse> :bp<CR>
+inoremap <silent> <C-LeftMouse> <Esc>:bp<CR>
 "find file
 nnoremap <silent> <C-f> :cs find 6 
 inoremap <silent> <C-f> <Esc>:cs find 6 
