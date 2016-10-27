@@ -188,7 +188,7 @@ set formatoptions+=r
 
 "expand tab in source code
 "autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.java,*.xml set shiftwidth=4 | set expandtab
-autocmd BufRead,BufNewFile *.java,*.xml set shiftwidth=4 | set expandtab
+autocmd BufRead,BufNewFile *.py,*.java,*.xml set shiftwidth=4 | set softtabstop=4 | set expandtab
 "autocmd BufRead,BufNewFile */kernel/*.c,*/kernel/*.h set shiftwidth=4 | set softtabstop=4 | set noexpandtab
 autocmd BufRead,BufNewFile *.c,*.h,*.cpp set shiftwidth=4 | set softtabstop=4 | set noexpandtab
 
