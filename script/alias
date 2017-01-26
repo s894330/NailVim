@@ -85,3 +85,5 @@ export USE_CCACHE=1
 
 export PATH=$PATH:~/.bin
 export PATH=$PATH:/opt/linux_kernel/torvalds-linux/scripts/
+HISTSIZE=100000
+HISTFILESIZE=300000
