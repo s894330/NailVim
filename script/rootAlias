@@ -10,7 +10,7 @@ alias b='shutdown -h now'
 #		echo "done" &&
 #		echo "goodbye !!" && shutdown -h now		
 #	'
-alias r='reboot'
+alias r='sync && sync && sync && reboot'
 alias q='exit'
 #alias rm='rm -i'
 #alias vi='vim.sh'
