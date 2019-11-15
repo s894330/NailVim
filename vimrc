@@ -146,6 +146,8 @@ inoremap [ []<Left>
 inoremap { {<CR>}<Esc>ko<TAB>
 inoremap <C-w> /*<Space><Space>*/<Left><Left><Left>
 nnoremap <C-w> i/*<Space><Space>*/<Left><Left><Left>
+inoremap <C-e> <!--<Space><Space>--><Left><Left><Left><Left>
+nnoremap <C-e> i<!--<Space><Space>--><Left><Left><Left><Left>
 
 inoremap ' <Esc>:CheckSingleQuote<CR>a
 inoremap " <Esc>:CheckDoubleQuote<CR>a
@@ -188,7 +190,7 @@ set formatoptions+=r
 
 "expand tab in source code
 "autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.java,*.xml set shiftwidth=4 | set expandtab
-autocmd BufRead,BufNewFile *.py,*.java,*.xml set shiftwidth=4 | set softtabstop=4 | set expandtab
+autocmd BufRead,BufNewFile *.py,*.java,*.xml,*.php set shiftwidth=4 | set softtabstop=4 | set expandtab
 "autocmd BufRead,BufNewFile */kernel/*.c,*/kernel/*.h set shiftwidth=4 | set softtabstop=4 | set noexpandtab
 autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.cc set shiftwidth=4 | set softtabstop=4 | set noexpandtab
 
