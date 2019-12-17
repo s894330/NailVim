@@ -143,7 +143,8 @@ inoremap <silent> <C-p> <Esc>:w!<CR>:!clear && make && ./a.out<CR>
 inoremap ( ()<Left>
 inoremap [ []<Left>
 "inoremap < <><Left>
-inoremap { {<CR>}<Esc>ko<TAB>
+"inoremap { {<CR>}<Esc>ko<TAB>
+inoremap { {}<Left>
 inoremap <C-w> /*<Space><Space>*/<Left><Left><Left>
 nnoremap <C-w> i/*<Space><Space>*/<Left><Left><Left>
 inoremap <C-e> <!--<Space><Space>--><Left><Left><Left><Left>
@@ -153,6 +154,7 @@ inoremap ' <Esc>:CheckSingleQuote<CR>a
 inoremap " <Esc>:CheckDoubleQuote<CR>a
 inoremap ) <Esc>:CheckLittleBracket<CR>a)
 inoremap ] <Esc>:CheckMiddleBracket<CR>a]
+inoremap } <Esc>:CheckBigBracket<CR>a}
 inoremap ; <Esc>:CheckSemiColon<CR>a;
 "inoremap > <Esc>:CheckArrowBracket<CR>a>
 
@@ -190,7 +192,7 @@ set formatoptions+=r
 
 "expand tab in source code
 "autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.java,*.xml set shiftwidth=4 | set expandtab
-autocmd BufRead,BufNewFile *.py,*.java,*.xml,*.php set shiftwidth=4 | set softtabstop=4 | set expandtab
+autocmd BufRead,BufNewFile *.py,*.java,*.xml,*.php,*.htm,*.html set shiftwidth=4 | set softtabstop=4 | set expandtab
 "autocmd BufRead,BufNewFile */kernel/*.c,*/kernel/*.h set shiftwidth=4 | set softtabstop=4 | set noexpandtab
 autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.cc set shiftwidth=4 | set softtabstop=4 | set noexpandtab
 
