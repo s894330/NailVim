@@ -71,6 +71,7 @@ alias rmpkg='sudo apt-get purge --auto-remove'
 alias ff='h | grep'
 alias psa='ps aux | grep'
 alias jp='jupyter notebook'
+alias de='deactivate'
 
 #export PATH=$PATH:/opt/android/sdk/platform-tools:/opt/jdk1.6.0_43/bin
 export PATH=$PATH:/opt/android/sdk/platform-tools
