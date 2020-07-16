@@ -14,9 +14,11 @@ else
 	read -s pass
 	echo ""
 
+	echo ""
 	echo "clean disk using /dev/zero"
 	echo $pass | sudo -S dd if=/dev/zero of=$1 bs=4096 status=progress
 
+	echo ""
 	echo "clean disk using /dev/urandom 3 times"
 	echo $pass | sudo -S dd if=/dev/urandom of=$1 bs=4096 status=progress
 	echo $pass | sudo -S dd if=/dev/urandom of=$1 bs=4096 status=progress
