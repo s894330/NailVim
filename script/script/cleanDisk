@@ -3,7 +3,7 @@
 # reference: https://www.marksanborn.net/howto/wiping-a-hard-drive-with-dd/
 #### command line sample
 
-# for n in `seq 2`; do sudo dd if=/dev/urandom of=/dev/sdc bs=1024 status=progress; done
+# for n in `seq 2`; do sudo dd if=/dev/urandom of=/dev/sdc bs=4096 status=progress; done
 
 ####
 if [ "$1" == "" ]; then
@@ -15,12 +15,12 @@ else
 	echo ""
 
 	echo "clean disk using /dev/zero"
-	echo $pass | sudo -S dd if=/dev/zero of=$1 bs=1024 status=progress
+	echo $pass | sudo -S dd if=/dev/zero of=$1 bs=4096 status=progress
 
 	echo "clean disk using /dev/urandom 3 times"
-	echo $pass | sudo -S dd if=/dev/urandom of=$1 bs=1024 status=progress
-	echo $pass | sudo -S dd if=/dev/urandom of=$1 bs=1024 status=progress
-	echo $pass | sudo -S dd if=/dev/urandom of=$1 bs=1024 status=progress
+	echo $pass | sudo -S dd if=/dev/urandom of=$1 bs=4096 status=progress
+	echo $pass | sudo -S dd if=/dev/urandom of=$1 bs=4096 status=progress
+	echo $pass | sudo -S dd if=/dev/urandom of=$1 bs=4096 status=progress
 
 	echo done
 fi
