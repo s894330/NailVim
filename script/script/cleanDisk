@@ -1,0 +1,20 @@
+#!/bin/bash
+if [ "$1" == "" ]; then
+	echo "usage: cleanDisk </dev/sdx>"
+else
+	# get root rights
+	echo -n "Please enter password for sudo rights: "
+	read -s pass
+	echo ""
+
+	echo "clean disk using /dev/zero"
+	echo $pass | sudo -S dd if=/dev/zero of=$1
+
+	echo "clean disk using /dev/urandom 3 times"
+	echo $pass | sudo -S dd if=/dev/urandom of=$1 bs=8b conv=notrunc
+	echo $pass | sudo -S dd if=/dev/urandom of=$1 bs=8b conv=notrunc
+	echo $pass | sudo -S dd if=/dev/urandom of=$1 bs=8b conv=notrunc
+
+	echo done
+fi
+
