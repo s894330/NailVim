@@ -1,6 +1,11 @@
 #!/bin/bash
 
 # reference: https://www.marksanborn.net/howto/wiping-a-hard-drive-with-dd/
+#### command line sample
+
+# for n in `seq 2`; do sudo dd if=/dev/urandom of=/dev/sdc bs=1024 status=progress; done
+
+####
 if [ "$1" == "" ]; then
 	echo "usage: cleanDisk </dev/sdx>"
 else
