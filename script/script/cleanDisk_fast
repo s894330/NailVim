@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# reference: https://www.marksanborn.net/howto/wiping-a-hard-drive-with-dd/
+#### command line sample
+
+# for n in `seq 2`; do sudo dd if=/dev/urandom of=/dev/sdc bs=4096 status=progress; done
+
+####
+if [ "$1" == "" ]; then
+	echo "usage: cleanDisk </dev/sdx>"
+else
+	# get root rights
+	echo -n "Please enter password for sudo rights: "
+	read -s pass
+	echo ""
+
+	echo ""
+	echo "clean disk using /dev/urandom 2 times"
+	echo "----------------------------------"
+	echo $pass | sudo -S dd if=/dev/urandom of=$1 bs=4096 status=progress
+	echo "----------------------------------"
+	echo $pass | sudo -S dd if=/dev/urandom of=$1 bs=4096 status=progress
+	echo "----------------------------------"
+
+	echo done
+fi
+
