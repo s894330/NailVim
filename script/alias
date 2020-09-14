@@ -74,6 +74,8 @@ alias jp='jupyter notebook'
 alias de='deactivate'
 alias node='node --use_strict'
 alias badblocks='badblocks -sv'
+alias vv='python3 -m venv venv'
+alias onvv='. venv/bin/activate'
 
 #export PATH=$PATH:/opt/android/sdk/platform-tools:/opt/jdk1.6.0_43/bin
 export PATH=$PATH:/opt/android/sdk/platform-tools
