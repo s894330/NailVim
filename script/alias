@@ -96,3 +96,9 @@ export PATH=$PATH:~/.bin
 export PATH=$PATH:/opt/linux_kernel/torvalds-linux/scripts/
 HISTSIZE=100000
 HISTFILESIZE=300000
+
+# virtualenv and virtualenvwrapper
+export WORKON_HOME=/opt/virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=$HOME/.local/bin/virtualenv
+source $HOME/.local/bin/virtualenvwrapper.sh
