@@ -100,7 +100,7 @@ function! <SID>Trinity_InitTagList()
     " Split to the right side of the screen
     let g:Tlist_Use_Left_Window = 1
     " Set the window width
-    let g:Tlist_WinWidth = 34
+    let g:Tlist_WinWidth = 30
     " Sort by the order
     let g:Tlist_Sort_Type = "order"
     " Do not display the help info
@@ -124,9 +124,9 @@ function! <SID>Trinity_InitSourceExplorer()
 
     " // Set the height of Source Explorer window                                  "
     if has("unix")
-        let g:SrcExpl_winHeight = 11
+        let g:SrcExpl_winHeight = 9
     else
-        let g:SrcExpl_winHeight = 8
+        let g:SrcExpl_winHeight = 6
     endif
     " // Set 50 ms for refreshing the Source Explorer                               "
     let g:SrcExpl_refreshTime = 50
@@ -167,7 +167,7 @@ endfunction " }}}
 function! <SID>Trinity_InitNERDTree()
 
     " Set the window width
-    let g:NERDTreeWinSize = 37
+    let g:NERDTreeWinSize = 30
     " Set the window position
     let g:NERDTreeWinPos = "right"
     " Auto centre
