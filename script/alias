@@ -1,4 +1,5 @@
 
+########## add by NailVim ##########
 alias vi='vim.sh'
 #alias vim='vim.sh'
 alias ai='sudo apt-get install'
