@@ -1,10 +1,10 @@
 
 ########## add by NailVim ##########
+## Normal ##
 alias vi='vim.sh'
 #alias vim='vim.sh'
 alias ai='sudo apt-get install'
 alias au='sudo apt-get update'
-alias aks='adb kill-server'
 alias sd='sudo su'
 alias lm='ls -alh'
 alias tarx='tar xvf'
@@ -13,15 +13,28 @@ alias q='exit'
 alias dfh='df -h'
 alias duh='du -h --max-depth=1'
 #alias rmv='rm -v'
-
+alias s='sync && sync && sync'
+alias h='history'
+#alias g='geany &'
+alias ua='uname -a'
+alias cscope='cscope -p8'
+alias rmi='rm -i'
+alias changetool='sudo update-alternatives --config'
+alias objdumpp='objdump -xsrdw'
+alias readelff='readelf -aW'
+alias rmpkg='sudo apt-get purge --auto-remove'
+alias ff='h | grep'
+alias psa='ps aux | grep'
 alias g++='g++ -Wall'
 alias gcc='gcc -Wall'
+alias badblocks='badblocks -sv'
 
+## Git ##
 alias gs='git status'
 alias gsc='git show --check'
 alias ga='git add'
-alias gau='git add -u'
-alias gr='git rm'
+#alias gau='git add -u'
+alias grm='git rm'
 alias grb='git rebase'
 alias gc='git commit -s -v'
 alias gca='git commit -a -s -v'
@@ -32,7 +45,7 @@ alias gu='git pull'
 alias gl='git log'
 alias gll='git log --pretty=oneline --abbrev-commit'
 alias gt='git tag'
-alias gtn='git tag -n'
+#alias gtn='git tag -n'
 alias gb='git branch'
 alias gco='git checkout'
 alias gm='git merge --no-ff'
@@ -43,47 +56,44 @@ alias ggc='git gc'
 alias gst='git stash'
 alias gsp='git stash pop'
 alias gk='gitk &'
-alias gbd='git branch -D patch'
-alias gsh='git show --check'
+alias gbt='git branch -b tmp HEAD'
+alias gbdt='git branch -D tmp'
+alias gbd='git branch -D '
 alias gam='git am --keep-non-patch'
+#alias gg='git config push.default matching'
+
+## Android ##
 alias rs='repo sync || repo sync || repo sync || repo sync || repo sync || repo sync || repo sync || repo sync || repo sync || repo sync'
 alias rss='repo forall -c git reset --hard && repo sync -j1'
 alias rso='repo sync . -j1'
 alias rst='repo start patch .'
 alias rsu='repo upload .'
-#alias gg='git config push.default matching'
+alias al='adb logcat -v time'
+#alias aks='adb kill-server'
+
+## Compile ##
 alias m='make'
 alias mc='make clean'
 alias mcm='make clean && make'
 alias mdc='make distclean'
 alias md='make debugss'
-alias s='sync && sync && sync'
-alias h='history'
-#alias g='geany &'
-alias ua='uname -a'
-alias al='adb logcat -v time'
-alias cscope='cscope -p8'
-alias rmi='rm -i'
-alias changetool='sudo update-alternatives --config'
-alias objdumpp='objdump -xsrdw'
-alias readelff='readelf -aW'
 alias check_line='find . -name "*.c" -o -name "*.h" | xargs cat | wc -l'
-alias rmpkg='sudo apt-get purge --auto-remove'
-alias ff='h | grep'
-alias psa='ps aux | grep'
+
+## Python ##
 alias jp='jupyter notebook'
 alias de='deactivate'
-alias node='node --use_strict'
-alias badblocks='badblocks -sv'
 alias vv='python3 -m venv venv'
 alias onvv='. venv/bin/activate'
 
+## Others ##
+alias node='node --use_strict'
+
 #export PATH=$PATH:/opt/android/sdk/platform-tools:/opt/jdk1.6.0_43/bin
-export PATH=$PATH:/opt/android/sdk/platform-tools
+#export PATH=$PATH:/opt/android/sdk/platform-tools
 
 #for speeding up Android source build
-export CCACHE_DIR=/opt/.ccache
-export USE_CCACHE=1
+#export CCACHE_DIR=/opt/.ccache
+#export USE_CCACHE=1
 
 #for Java environment
 #export JAVA_HOME=/opt/jdk1.6.0_43
@@ -94,6 +104,6 @@ export USE_CCACHE=1
 #export TERM=xterm-256color
 
 export PATH=$PATH:~/.bin
-export PATH=$PATH:/opt/linux_kernel/torvalds-linux/scripts/
+#export PATH=$PATH:/opt/linux_kernel/torvalds-linux/scripts/
 HISTSIZE=100000
 HISTFILESIZE=300000
