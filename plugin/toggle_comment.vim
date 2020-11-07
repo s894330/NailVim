@@ -16,6 +16,7 @@ let s:comment_symbol = {
   \  'fortran'	:  'C',
   \  'matlab'	:  '%',
   \  'doctest'	:  '',
+  \  'python'	:  '#',
   \ }
 "  \  'rien'    :  '~',
 "  \  'python'	:  '#',
