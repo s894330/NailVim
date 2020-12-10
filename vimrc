@@ -1,7 +1,9 @@
 "Set mapleader
+"The <Leader> key is mapped to \ by default. So if you have a map of <Leader>t,
+"you can execute it by default with \+t
 let mapleader = ","
 
-"======  Set general hotkey  ====================
+"======  General hotkey  ====================
 "== file operation ==
 "save file
 nnoremap <silent> <C-s> :w<CR>
@@ -16,7 +18,7 @@ inoremap <silent> <F2> <Esc>:ExitAll<CR>
 nnoremap <silent> <F5> :e!<CR>
 inoremap <silent> <F5> <Esc>:e!<CR>
 
-"== file navigate operation ==
+"== File navigate operation ==
 "switch buffer
 nnoremap <silent> <C-Right> :bn<CR>
 inoremap <silent> <C-Right> <Esc>:bn<CR>
@@ -35,7 +37,7 @@ nnoremap <silent> <C-g> :%s/
 inoremap <silent> <C-g> <Esc>:%s/
 vnoremap <silent> <C-g> <Esc>:%s/
 
-"== text operation ==
+"== Text operation ==
 "copy text
 nnoremap <silent> <C-c> "+yy
 inoremap <silent> <C-c> <Esc>"+yya
@@ -56,25 +58,24 @@ inoremap <silent> <C-d> <Esc>dda
 nnoremap <silent> <C-z> u
 inoremap <silent> <C-z> <Esc>ua<Left>
 vnoremap <silent> <C-z> ua<Left>
-
 "redo
 inoremap <silent> <C-r> <Esc><C-r>a<Left>
 
-"== text movement operation ==
+"== Text movement operation ==
 "move cursor to the end
 nnoremap <silent> <End><End> <End>a
-nnoremap <silent> e <End>
-inoremap <silent> <C-e> <End>
+"nnoremap <silent> e <End>
+"inoremap <silent> <C-e> <End>
 "move cursor to the home
 nnoremap <silent> <Home><Home> <Home>a<Left>
-nnoremap <silent> h <Home>
-inoremap <silent> <C-h> <Home>
+"nnoremap <silent> h <Home>
+"inoremap <silent> <C-h> <Home>
 "enable enter in normal mode
-nnoremap <silent> <Enter><Enter> a<Left><CR>
+"nnoremap <silent> <Enter><Enter> a<Left><CR>
 "enable backspace in normal mode
-nnoremap <silent> <Backspace> a<Left><Backspace>
+"nnoremap <silent> <Backspace> a<Left><Backspace>
 "enable space in normal mode
-nnoremap <silent> w<Space> a<Left><Space>
+"nnoremap <silent> w<Space> a<Left><Space>
 "fast to file end
 nnoremap <silent> bb Gzz
 "fast to file start
@@ -87,7 +88,7 @@ nnoremap <silent> N Nzz
 nnoremap <silent> b <PageDown>
 nnoremap <silent> g <PageUp>
 
-"== format file operation ==
+"== Format file operation ==
 "toggle line number
 nnoremap <silent> <C-n> :set invnumber<CR>
 inoremap <silent> <C-n> <Esc>:set invnumber<CR>
@@ -99,22 +100,22 @@ vnoremap <silent> <Tab> >
 vnoremap <silent> <S-Tab> <
 
 "== cursor movement =="
-nnoremap <silent> i <Up>
+"nnoremap <silent> i <Up>
 "can not mapping ctrl+i, the behavior of ctrl + i is the same as <tab>
 "you can use <alt> + i instead
 "inoremap <silent> <C-i> <Up>
-nnoremap <silent> k <Down>
-inoremap <silent> <C-k> <Down>
-nnoremap <silent> j <Left>
-inoremap <silent> <C-j> <Left>
-nnoremap <silent> l <Right>
-inoremap <silent> <C-l> <Right>
-nnoremap <silent> u <PageUp>
-inoremap <silent> <C-u> <PageUp>
-nnoremap <silent> o <PageDown>
-inoremap <silent> <C-o> <PageDown>
+"nnoremap <silent> k <Down>
+"inoremap <silent> <C-k> <Down>
+"nnoremap <silent> j <Left>
+"inoremap <silent> <C-j> <Left>
+"nnoremap <silent> l <Right>
+"inoremap <silent> <C-l> <Right>
+"nnoremap <silent> u <PageUp>
+"inoremap <silent> <C-u> <PageUp>
+"nnoremap <silent> o <PageDown>
+"inoremap <silent> <C-o> <PageDown>
 
-"== programming operation ==
+"== Programming operation ==
 "for toggleComment
 nnoremap <silent> <C-b>       mZ:call ToggleComment_toggle()<CR>`Z
 inoremap <silent> <C-b>       <Esc>mZ:call ToggleComment_toggle()<CR>`Za<Left>
@@ -128,16 +129,15 @@ set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 nnoremap <silent> ff :ToggleFold<CR>
-nnoremap <silent> fg zR	"unfold all
+nnoremap <silent> <Space> zR	"unfold all
 
 "format coding style
 "nnoremap <silent> ss :CodeFormat<CR>
-nnoremap <silent> ss :CodeFormatLinuxStyle<CR>
-"nnoremap <silent> ff :CodeFormatLinuxStyle<CR> (this conflit with folding feature)
+"nnoremap <silent> ss :CodeFormatLinuxStyle<CR>
 
 "auto make and run
-nnoremap <silent> <C-p> :w!<CR>:!clear && make && ./a.out<CR>
-inoremap <silent> <C-p> <Esc>:w!<CR>:!clear && make && ./a.out<CR>
+"nnoremap <silent> <C-p> :w!<CR>:!clear && make && ./a.out<CR>
+"inoremap <silent> <C-p> <Esc>:w!<CR>:!clear && make && ./a.out<CR>
 
 "auto close
 inoremap ( ()<Left>
@@ -159,10 +159,10 @@ inoremap ; <Esc>:CheckSemiColon<CR>a;
 "inoremap > <Esc>:CheckArrowBracket<CR>a>
 
 "reload cscope
-nnoremap <silent> <F12> :ResetCscope<CR>
+"nnoremap <silent> <F12> :ResetCscope<CR>
 "================================================
 
-"====== Set general vim property  ===============
+"====== General vim property  ===============
 "enable mouse usage
 "n: Normal mode
 "v: Visual mode
@@ -188,14 +188,26 @@ colorscheme nail-color
 set timeoutlen=300
 
 "auto comment
-set formatoptions+=r
+"set formatoptions+=r
 
-"expand tab in source code
-"autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.java,*.xml set shiftwidth=4 | set expandtab
-autocmd BufRead,BufNewFile *.py,*.java,*.xml set shiftwidth=4 | set softtabstop=4 | set expandtab
-autocmd BufRead,BufNewFile *.php,*.htm,*.html,*.css set shiftwidth=2 | set softtabstop=2 | set expandtab
-"autocmd BufRead,BufNewFile */kernel/*.c,*/kernel/*.h set shiftwidth=4 | set softtabstop=4 | set noexpandtab
-autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.cc set shiftwidth=4 | set softtabstop=4 | set noexpandtab
+"Expand tab in source code
+autocmd BufRead,BufNewFile *.py,*.java,*.xml
+ \ set softtabstop=4
+ \ | set shiftwidth=4
+ \ | set expandtab
+ \ | set autoindent
+
+autocmd BufRead,BufNewFile *.php,*.htm,*.html,*.css
+ \ set softtabstop=2
+ \ | set shiftwidth=2
+ \ | set expandtab
+ \ | set autoindent
+
+autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.cc
+ \ | set softtabstop=4
+ \ | set shiftwidth=4
+ \ | set noexpandtab
+ \ | set autoindent
 
 "set line 80 color
 autocmd BufRead,BufNewFile * setlocal colorcolumn=80
@@ -221,6 +233,6 @@ let NERDTreeMouseMode = 3
 nnoremap <silent> <F8>   :TrinityToggleAll<CR>:set invnumber<CR>
 
 "for tab toggle
-nnoremap <silent> <F7>   :TabToggle<CR>
-inoremap <silent> <C-F7>   <ESC>:TabToggle<CR>a
+"nnoremap <silent> <F7>   :TabToggle<CR>
+"inoremap <silent> <C-F7>   <ESC>:TabToggle<CR>a
 
