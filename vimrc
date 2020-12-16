@@ -36,6 +36,9 @@ vnoremap <silent> <C-f> <Esc>:cs find 6
 nnoremap <silent> <C-g> :%s/
 inoremap <silent> <C-g> <Esc>:%s/
 vnoremap <silent> <C-g> <Esc>:%s/
+"create new file
+nnoremap <silent> <C-n> :e 
+"inoremap <silent> <C-n> <Esc>:e 
 
 "== Text operation ==
 "copy text
@@ -90,8 +93,8 @@ nnoremap <silent> g <PageUp>
 
 "== Format file operation ==
 "toggle line number
-nnoremap <silent> <C-n> :set invnumber<CR>
-inoremap <silent> <C-n> <Esc>:set invnumber<CR>
+nnoremap <silent> <C-l> :set invnumber<CR>
+inoremap <silent> <C-l> <Esc>:set invnumber<CR>a
 "enable <tab> in normal mode
 nnoremap <silent> <Tab> :><CR>
 nnoremap <silent> <S-Tab> :<<CR>
@@ -230,7 +233,7 @@ let Tlist_Use_SingleClick = 1
 let NERDTreeMouseMode = 3
 
 "for trinity
-nnoremap <silent> <F8>   :TrinityToggleAll<CR>:set invnumber<CR>
+nnoremap <silent> <F8>   :TrinityToggleAll<CR>
 
 "for tab toggle
 "nnoremap <silent> <F7>   :TabToggle<CR>
