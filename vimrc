@@ -215,6 +215,12 @@ autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.cc
 "set line 80 color
 autocmd BufRead,BufNewFile * setlocal colorcolumn=80
 
+" Show trailing whitespace and spaces before a tab:
+nnoremap <silent> <F3>   :match ExtraWhitespace /\s\+$/<CR>
+inoremap <silent> <F3>   <ESC>:match ExtraWhitespace /\s\+$/<CR>a
+nnoremap <silent> <F4>   :match<CR>
+inoremap <silent> <F4>   <ESC>:match<CR>a
+
 "================================================
 
 autocmd VimEnter * call OpenProject()
