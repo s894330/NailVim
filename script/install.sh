@@ -51,10 +51,8 @@ done
 echo "init git submodule"
 $CD ~/.vim
 git submodule init
-git submodule update
+#git submodule update
 $CD bundle/SrcExpl
-git am ../../patch_bundle/SrcExpl/0001-normal-the-screen.patch 2>&1 > /dev/null
-git am --abort 2>&1 > /dev/null
 $CD ../..
 
 echo "Setup environment..."
