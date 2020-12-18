@@ -90,6 +90,8 @@ nnoremap <silent> N Nzz
 "pageDown
 nnoremap <silent> b <PageDown>
 nnoremap <silent> g <PageUp>
+"direct move to next line
+inoremap <silent> <F12> <End><CR>
 
 "== Format file operation ==
 "toggle line number
