@@ -28,6 +28,14 @@ nnoremap <silent> <C-Left> :bp<CR>
 inoremap <silent> <C-Left> <Esc>:bp<CR>
 nnoremap <silent> <C-LeftMouse> :bp<CR>
 inoremap <silent> <C-LeftMouse> <Esc>:bp<CR>
+nnoremap <silent> <A-Right> :bn<CR>
+inoremap <silent> <A-Right> <Esc>:bn<CR>
+nnoremap <silent> <A-RightMouse> :bn<CR>
+inoremap <silent> <A-RightMouse> <Esc>:bn<CR>
+nnoremap <silent> <A-Left> :bp<CR>
+inoremap <silent> <A-Left> <Esc>:bp<CR>
+nnoremap <silent> <A-LeftMouse> :bp<CR>
+inoremap <silent> <A-LeftMouse> <Esc>:bp<CR>
 "find file
 nnoremap <silent> <C-f> :cs find 6 
 inoremap <silent> <C-f> <Esc>:cs find 6 
@@ -90,8 +98,10 @@ nnoremap <silent> N Nzz
 "pageDown
 nnoremap <silent> b <PageDown>
 nnoremap <silent> g <PageUp>
-"direct move to next line
-inoremap <silent> <F12> <End><CR>
+"keep indent when press <ESC> on empty line
+inoremap <CR> <CR>x<BS>
+
+"press alt-o can direct move to next line
 
 "== Format file operation ==
 "toggle line number
@@ -180,7 +190,7 @@ set mouse=a
 "set number
 
 "set auto indent
-set cindent
+"set cindent
 
 "load color scheme
 set t_Co=256
@@ -194,6 +204,12 @@ set timeoutlen=300
 
 "auto comment
 "set formatoptions+=r
+
+"set 256 color
+"set t_Co=256
+
+"show trailing whitespace:
+":match ExtraWhitespace /\s\+$/
 
 "Expand tab in source code
 autocmd BufRead,BufNewFile *.py,*.java,*.xml
@@ -212,6 +228,7 @@ autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.cc
  \ | set softtabstop=4
  \ | set shiftwidth=4
  \ | set noexpandtab
+ \ | set cindent
  \ | set autoindent
 
 "set line 80 color
