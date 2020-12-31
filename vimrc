@@ -246,10 +246,13 @@ autocmd VimEnter * call OpenProject()
 autocmd VimLeave * call CloseProject()
 
 "for pathogen.vim management
-execute pathogen#infect()
+filetype off
 
-"for taglist
-filetype on
+call pathogen#infect()
+call pathogen#helptags()
+
+filetype plugin indent on
+syntax on
 
 "for taglist
 let Tlist_Use_SingleClick = 1
