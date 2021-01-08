@@ -89,6 +89,12 @@ let g:jedi#usages_command = ""
 let g:jedi#completions_command = ""
 let g:jedi#rename_command = ""
 
+" flake8
+"let g:flake8_cmd="<flake8 bin path>"
+let g:flake8_quickfix_height=4
+" run the Flake8 check every time write a Python file
+autocmd BufWritePost *.py call flake8#Flake8()
+
 "======  General hotkey  ====================
 "== file operation ==
 "save file
