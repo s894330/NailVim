@@ -3,6 +3,92 @@
 "you can execute it by default with \+t
 let mapleader = ","
 
+"====== General vim property  ===============
+"enable mouse usage
+"n: Normal mode
+"v: Visual mode
+"i: Insert mode
+"c: Command-line mode
+"a: All mode
+set mouse=a
+
+"display line number
+"set number
+
+"set auto indent
+"set cindent
+
+"load color scheme
+set t_Co=256
+colorscheme nail-color
+
+"set highlight search matches
+"set hlsearch
+
+"shorten the key timeout time
+set timeoutlen=300
+
+"auto comment
+"set formatoptions+=r
+
+"show trailing whitespace:
+":match ExtraWhitespace /\s\+$/
+
+"====== autocmd  ======================
+autocmd VimEnter * call OpenProject()
+autocmd VimLeave * call CloseProject()
+
+"Expand tab in source code
+autocmd BufRead,BufNewFile *.py,*.java,*.xml
+ \ set softtabstop=4
+ \ | set shiftwidth=4
+ \ | set expandtab
+ \ | set autoindent
+
+autocmd BufRead,BufNewFile *.php,*.htm,*.html,*.css
+ \ set softtabstop=2
+ \ | set shiftwidth=2
+ \ | set expandtab
+ \ | set autoindent
+
+autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.cc
+ \ | set softtabstop=4
+ \ | set shiftwidth=4
+ \ | set noexpandtab
+ \ | set cindent
+ \ | set autoindent
+
+"set line 80 color
+autocmd BufRead,BufNewFile * setlocal colorcolumn=80
+
+"======  Pathogen plugin load  ==============
+filetype off
+
+call pathogen#infect()
+call pathogen#helptags()
+
+filetype plugin indent on
+syntax on
+
+"====== Plugins settings  ===================
+" Taglist
+let Tlist_Use_SingleClick = 1
+
+" NERDTree
+let NERDTreeMouseMode = 3
+
+" jedi-vim
+let g:jedi#show_call_signatures = "2"
+let g:jedi#environment_path = "/opt/global_python_venv"
+let g:jedi#goto_command = "<leader>d"
+let g:jedi#goto_assignments_command = "<leader>s"
+let g:jedi#goto_stubs_command = ""
+let g:jedi#goto_definitions_command = ""
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = ""
+let g:jedi#completions_command = ""
+let g:jedi#rename_command = ""
+
 "======  General hotkey  ====================
 "== file operation ==
 "save file
@@ -175,90 +261,12 @@ inoremap ; <Esc>:CheckSemiColon<CR>a;
 
 "reload cscope
 "nnoremap <silent> <F12> :ResetCscope<CR>
-"================================================
-
-"====== General vim property  ===============
-"enable mouse usage
-"n: Normal mode
-"v: Visual mode
-"i: Insert mode
-"c: Command-line mode
-"a: All mode
-set mouse=a
-
-"display line number
-"set number
-
-"set auto indent
-"set cindent
-
-"load color scheme
-set t_Co=256
-colorscheme nail-color
-
-"set highlight search matches
-"set hlsearch
-
-"shorten the key timeout time
-set timeoutlen=300
-
-"auto comment
-"set formatoptions+=r
-
-"set 256 color
-"set t_Co=256
-
-"show trailing whitespace:
-":match ExtraWhitespace /\s\+$/
-
-"Expand tab in source code
-autocmd BufRead,BufNewFile *.py,*.java,*.xml
- \ set softtabstop=4
- \ | set shiftwidth=4
- \ | set expandtab
- \ | set autoindent
-
-autocmd BufRead,BufNewFile *.php,*.htm,*.html,*.css
- \ set softtabstop=2
- \ | set shiftwidth=2
- \ | set expandtab
- \ | set autoindent
-
-autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.cc
- \ | set softtabstop=4
- \ | set shiftwidth=4
- \ | set noexpandtab
- \ | set cindent
- \ | set autoindent
-
-"set line 80 color
-autocmd BufRead,BufNewFile * setlocal colorcolumn=80
 
 " Show trailing whitespace and spaces before a tab:
 nnoremap <silent> <F4>   :match ExtraWhitespace /\s\+$/<CR>
 inoremap <silent> <F4>   <ESC>:match ExtraWhitespace /\s\+$/<CR>a
 nnoremap <silent> <F3>   :match<CR>
 inoremap <silent> <F3>   <ESC>:match<CR>a
-
-"================================================
-
-autocmd VimEnter * call OpenProject()
-autocmd VimLeave * call CloseProject()
-
-"for pathogen.vim management
-filetype off
-
-call pathogen#infect()
-call pathogen#helptags()
-
-filetype plugin indent on
-syntax on
-
-"for taglist
-let Tlist_Use_SingleClick = 1
-
-"for NERDTree
-let NERDTreeMouseMode = 3
 
 "for trinity
 nnoremap <silent> <F8>   :TrinityToggleAll<CR>
