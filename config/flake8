@@ -1,0 +1,4 @@
+[flake8]
+# E265: block comment should start with '#'
+ignore = E265
+max-line-length = 140

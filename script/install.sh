@@ -48,12 +48,25 @@ do
 	fi
 done
 
+# setup config
+for file in ~/.vim/config/*
+do
+	if [ ! -L ~/.config/$(basename $file) ]; then
+		echo "link file: $(basename $file)"
+		$LN ~/.vim/config/$(basename $file) ~/.config/$(basename $file)
+	fi
+done
+
+
 echo "init git submodule"
 $CD ~/.vim
 git submodule init
+# because some module may be modified by myself,
+# go to each submodule to do update staff
+# git reate hard to original master, then update source code
+# then apply patch in patch_bundle folder
+# then make a patch again and store it back into patch_bundle folder
 #git submodule update
-$CD bundle/SrcExpl
-$CD ../..
 
 echo "Setup environment..."
 if [ -f ~/.bashrc_backup ]; then
