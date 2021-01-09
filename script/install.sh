@@ -57,8 +57,6 @@ do
 	fi
 done
 
-$CD ~/.vim
-
 echo "Setup environment..."
 if [ -f ~/.bashrc_backup ]; then
 	echo "restore ~/.bashrc"
@@ -67,11 +65,15 @@ else
 	echo "backup ~/.bashrc"
 	$CP ~/.bashrc ~/.bashrc_backup
 fi
-# setup ~/.bashrc and root bashrc
+
+# setup ~/.bashrc
+$CD ~/.vim
 echo "apply alias into ~/.bashrc"
 cat script/alias >> ~/.bashrc
-#sudo cat script/rootAlias >> /etc/bash.bashrc
 
 echo "done!!"
+echo ""
+echo "============================================================="
 echo "please apply script/rootAlias into /etc/bash.bashrc manually"
 echo "please execute \"source ~/.bashrc\" and then enjoy it !!"
+echo "============================================================="
