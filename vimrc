@@ -78,6 +78,8 @@ let Tlist_Use_SingleClick = 1
 let NERDTreeMouseMode = 3
 
 " jedi-vim
+" disable docstring window to popup during completion
+autocmd FileType python setlocal completeopt-=preview
 let g:jedi#show_call_signatures = "2"
 let g:jedi#environment_path = "/opt/global_python_venv"
 let g:jedi#goto_command = "<leader>d"
@@ -91,7 +93,7 @@ let g:jedi#rename_command = ""
 
 " flake8
 "let g:flake8_cmd="<flake8 bin path>"
-let g:flake8_quickfix_height=4
+let g:flake8_quickfix_height=3
 " run the Flake8 check every time write a Python file
 autocmd BufWritePost *.py call flake8#Flake8()
 
@@ -167,12 +169,12 @@ inoremap <silent> <C-r> <Esc><C-r>a<Left>
 "== Text movement operation ==
 "move cursor to the end
 nnoremap <silent> <End><End> <End>a
-"nnoremap <silent> e <End>
-"inoremap <silent> <C-e> <End>
+nnoremap <silent> <A-e> <End>
+inoremap <silent> <A-e> <End>
 "move cursor to the home
 nnoremap <silent> <Home><Home> <Home>a<Left>
-"nnoremap <silent> h <Home>
-"inoremap <silent> <C-h> <Home>
+nnoremap <silent> <A-h> <Home>
+inoremap <silent> <A-h> <Home>
 "enable enter in normal mode
 "nnoremap <silent> <Enter><Enter> a<Left><CR>
 "enable backspace in normal mode
@@ -207,20 +209,21 @@ vnoremap <silent> <Tab> >
 vnoremap <silent> <S-Tab> <
 
 "== cursor movement =="
-"nnoremap <silent> i <Up>
-"can not mapping ctrl+i, the behavior of ctrl + i is the same as <tab>
-"you can use <alt> + i instead
-"inoremap <silent> <C-i> <Up>
-"nnoremap <silent> k <Down>
-"inoremap <silent> <C-k> <Down>
-"nnoremap <silent> j <Left>
-"inoremap <silent> <C-j> <Left>
-"nnoremap <silent> l <Right>
-"inoremap <silent> <C-l> <Right>
-"nnoremap <silent> u <PageUp>
-"inoremap <silent> <C-u> <PageUp>
-"nnoremap <silent> o <PageDown>
-"inoremap <silent> <C-o> <PageDown>
+" if want the Alt mapping work, you must install one of the following plugin
+" https://github.com/vim-utils/vim-alt-mappings
+" https://github.com/drmikehenry/vim-fixkey
+nnoremap <silent> <A-i> <Up>
+inoremap <silent> <A-i> <Up>
+nnoremap <silent> <A-k> <Down>
+inoremap <silent> <A-k> <Down>
+nnoremap <silent> <A-j> <Left>
+inoremap <silent> <A-j> <Left>
+nnoremap <silent> <A-l> <Right>
+inoremap <silent> <A-l> <Right>
+nnoremap <silent> <A-u> <PageUp>
+inoremap <silent> <A-u> <PageUp>
+nnoremap <silent> <A-o> <PageDown>
+inoremap <silent> <A-o> <PageDown>
 
 "== Programming operation ==
 "for toggleComment
