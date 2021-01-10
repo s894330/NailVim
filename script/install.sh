@@ -26,6 +26,7 @@ $RM ~/.vimrc ~/.vim
 
 # extract bundle files
 echo "extract bundle files"
+$RM bundle
 $TARX zipFile/bundle.tar.bz2
 $CD ..
 
@@ -77,3 +78,4 @@ echo "============================================================="
 echo "please apply script/rootAlias into /etc/bash.bashrc manually"
 echo "please execute \"source ~/.bashrc\" and then enjoy it !!"
 echo "============================================================="
+echo ""
