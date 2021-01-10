@@ -209,8 +209,7 @@ vnoremap <silent> <Tab> >
 vnoremap <silent> <S-Tab> <
 
 "== cursor movement =="
-" if want the Alt mapping work, you must install one of the following plugin
-" https://github.com/vim-utils/vim-alt-mappings
+" if want the Alt mapping work, you must install the following plugin
 " https://github.com/drmikehenry/vim-fixkey
 nnoremap <silent> <A-i> <Up>
 inoremap <silent> <A-i> <Up>
