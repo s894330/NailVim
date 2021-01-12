@@ -169,12 +169,14 @@ inoremap <silent> <C-r> <Esc><C-r>a<Left>
 "== Text movement operation ==
 "move cursor to the end
 nnoremap <silent> <End><End> <End>a
-nnoremap <silent> <A-e> <End>
-inoremap <silent> <A-e> <End>
+nnoremap <silent> <A-e> <Home>
+inoremap <silent> <A-e> <Home>
 "move cursor to the home
 nnoremap <silent> <Home><Home> <Home>a<Left>
-nnoremap <silent> <A-h> <Home>
-inoremap <silent> <A-h> <Home>
+nnoremap <silent> <A-h> <End>
+inoremap <silent> <A-h> <End>
+"move cursor to next line directly
+inoremap <silent> <A-CR> <End><CR>
 "enable enter in normal mode
 "nnoremap <silent> <Enter><Enter> a<Left><CR>
 "enable backspace in normal mode
