@@ -87,6 +87,7 @@ alias gvv='python3 -m venv /opt/global_python_venv && . /opt/global_python_venv/
 alias onvv='. venv/bin/activate'
 alias gonvv='. /opt/global_python_venv/bin/activate'
 alias pi='pip install'
+alias prmpkg='pip uninstall'
 
 ## Others ##
 alias node='node --use_strict'
