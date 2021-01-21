@@ -169,14 +169,14 @@ inoremap <silent> <C-r> <Esc><C-r>a<Left>
 "== Text movement operation ==
 "move cursor to the end
 nnoremap <silent> <End><End> <End>a
-nnoremap <silent> <A-e> <Home>
-inoremap <silent> <A-e> <Home>
+nnoremap <silent> <A-f> <Home>
+inoremap <silent> <A-f> <Home>
 "move cursor to the home
 nnoremap <silent> <Home><Home> <Home>a<Left>
-nnoremap <silent> <A-h> <End>
-inoremap <silent> <A-h> <End>
+nnoremap <silent> <A-j> <End>
+inoremap <silent> <A-j> <End>
 "move cursor to next line directly
-inoremap <silent> <A-CR> <End><CR>
+inoremap <silent> <A-o> <End><CR>
 "enable enter in normal mode
 "nnoremap <silent> <Enter><Enter> a<Left><CR>
 "enable backspace in normal mode
@@ -213,18 +213,18 @@ vnoremap <silent> <S-Tab> <
 "== cursor movement =="
 " if want the Alt mapping work, you must install the following plugin
 " https://github.com/drmikehenry/vim-fixkey
-nnoremap <silent> <A-i> <Up>
-inoremap <silent> <A-i> <Up>
-nnoremap <silent> <A-k> <Down>
-inoremap <silent> <A-k> <Down>
-nnoremap <silent> <A-j> <Left>
-inoremap <silent> <A-j> <Left>
-nnoremap <silent> <A-l> <Right>
-inoremap <silent> <A-l> <Right>
-nnoremap <silent> <A-u> <PageUp>
-inoremap <silent> <A-u> <PageUp>
-nnoremap <silent> <A-o> <PageDown>
-inoremap <silent> <A-o> <PageDown>
+"nnoremap <silent> <A-i> <Up>
+"inoremap <silent> <A-i> <Up>
+"nnoremap <silent> <A-k> <Down>
+"inoremap <silent> <A-k> <Down>
+"nnoremap <silent> <A-j> <Left>
+"inoremap <silent> <A-j> <Left>
+"nnoremap <silent> <A-l> <Right>
+"inoremap <silent> <A-l> <Right>
+"nnoremap <silent> <A-u> <PageUp>
+"inoremap <silent> <A-u> <PageUp>
+"nnoremap <silent> <A-o> <PageDown>
+"inoremap <silent> <A-o> <PageDown>
 
 "== Programming operation ==
 "for toggleComment
