@@ -177,6 +177,7 @@ nnoremap <silent> <A-j> <End>
 inoremap <silent> <A-j> <End>
 "move cursor to next line directly
 inoremap <silent> <A-o> <End><CR>
+inoremap <silent> <A-CR> <End><CR>
 "enable enter in normal mode
 "nnoremap <silent> <Enter><Enter> a<Left><CR>
 "enable backspace in normal mode
