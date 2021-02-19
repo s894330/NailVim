@@ -95,19 +95,23 @@ alias node='node --use_strict'
 #export PATH=$PATH:/opt/android/sdk/platform-tools:/opt/jdk1.6.0_43/bin
 #export PATH=$PATH:/opt/android/sdk/platform-tools
 
-#for speeding up Android source build
+# for speeding up Android source build
 #export CCACHE_DIR=/opt/.ccache
 #export USE_CCACHE=1
 
-#for Java environment
+# for Java environment
 #export JAVA_HOME=/opt/jdk1.6.0_43
 #export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 #export CLASSPATH=$JAVA_HOME/lib:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
-#for vim volor
+# for vim volor
 #export TERM=xterm-256color
 
 export PATH=$PATH:~/.bin
 #export PATH=$PATH:/opt/linux_kernel/torvalds-linux/scripts/
 HISTSIZE=100000
 HISTFILESIZE=300000
+
+## Script ##
+# Check python package version
+function pipver() { curl -s https://pypi.org/rss/project/$1/releases.xml | sed -n 's/\s*<title>\([0-9.]*\).*/\1/p' ;}
