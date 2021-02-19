@@ -143,7 +143,11 @@ inoremap <silent> <C-g> <Esc>:%s/
 vnoremap <silent> <C-g> <Esc>:%s/
 "create new file
 nnoremap <silent> <C-n> :e 
+nnoremap <silent> <A-n> :e 
 "inoremap <silent> <C-n> <Esc>:e 
+"create new folder
+nnoremap <silent> <C-k> :! mkdir 
+nnoremap <silent> <A-k> :! mkdir 
 
 "== Text operation ==
 "copy text
