@@ -97,6 +97,9 @@ let g:flake8_quickfix_height=3
 " run the Flake8 check every time write a Python file
 autocmd BufWritePost *.py call flake8#Flake8()
 
+" localvimrc
+let g:localvimrc_ask=0
+
 "======  General hotkey  ====================
 "== file operation ==
 "save file
