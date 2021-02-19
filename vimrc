@@ -148,6 +148,8 @@ nnoremap <silent> <A-n> :e
 "create new folder
 nnoremap <silent> <C-k> :! mkdir 
 nnoremap <silent> <A-k> :! mkdir 
+"execute shell command
+nnoremap <silent> <A-e> :! 
 
 "== Text operation ==
 "copy text
