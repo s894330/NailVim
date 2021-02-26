@@ -108,6 +108,8 @@ inoremap <silent> <C-s> <Esc>:w<CR>
 "exit file without save
 nnoremap <silent> <C-q> :Bclose!<CR>
 inoremap <silent> <C-q> <Esc>:Bclose!<CR>
+nnoremap <silent> <A-q> :Bclose!<CR>
+inoremap <silent> <A-q> <Esc>:Bclose!<CR>
 "exit vi and discard all change
 nnoremap <silent> <F2> :ExitAll<CR>
 inoremap <silent> <F2> <Esc>:ExitAll<CR>
@@ -268,6 +270,8 @@ inoremap [ []<Left>
 inoremap { {}<Left>
 inoremap <C-w> /*<Space><Space>*/<Left><Left><Left>
 nnoremap <C-w> i/*<Space><Space>*/<Left><Left><Left>
+inoremap <A-w> {%<Space><Space>%}<Left><Left><Left>
+nnoremap <A-w> {%<Space><Space>%}<Left><Left><Left>
 inoremap <C-e> <!--<Space><Space>--><Left><Left><Left><Left>
 nnoremap <C-e> i<!--<Space><Space>--><Left><Left><Left><Left>
 
