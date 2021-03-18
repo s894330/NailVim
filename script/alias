@@ -82,12 +82,18 @@ alias check_line='find . -name "*.c" -o -name "*.h" | xargs cat | wc -l'
 ## Python ##
 alias jp='jupyter notebook'
 alias de='deactivate'
-alias vv='python3 -m venv venv && . venv/bin/activate && pip install --upgrade pip && pip install wheel && echo "let g:jedi#environment_path = \"`pwd`/venv\"" > .lvimrc'
-alias gvv='python3 -m venv /opt/global_python_venv && . /opt/global_python_venv/bin/activate && pip install --upgrade pip && pip install wheel'
+alias vv='python3 -m venv venv && source venv/bin/activate && pip install --upgrade pip && pip install wheel && echo "let g:jedi#environment_path = \"`pwd`/venv\"" > .lvimrc'
+alias gvv='python3 -m venv /opt/global_python_venv && source /opt/global_python_venv/bin/activate && pip install --upgrade pip && pip install wheel'
 alias onvv='. venv/bin/activate'
 alias gonvv='. /opt/global_python_venv/bin/activate'
 alias pi='pip install'
 alias prmpkg='pip uninstall'
+
+## Docker ##
+alias dk='docker'
+alias dki='docker images'
+alias dkl='docker ps -a'
+alias dkc='docker-compose'
 
 ## Others ##
 alias node='node --use_strict'
