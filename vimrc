@@ -101,18 +101,23 @@ autocmd BufWritePost *.py call flake8#Flake8()
 let g:localvimrc_ask=0
 
 "======  General hotkey  ====================
+" if want the Alt mapping work, you must install the following plugin
+" https://github.com/drmikehenry/vim-fixkey
 "== file operation ==
 "save file
 nnoremap <silent> <C-s> :w<CR>
 inoremap <silent> <C-s> <Esc>:w<CR>
+
 "exit file without save
 nnoremap <silent> <C-q> :Bclose!<CR>
 inoremap <silent> <C-q> <Esc>:Bclose!<CR>
 nnoremap <silent> <A-q> :Bclose!<CR>
 inoremap <silent> <A-q> <Esc>:Bclose!<CR>
+
 "exit vi and discard all change
 nnoremap <silent> <F2> :ExitAll<CR>
 inoremap <silent> <F2> <Esc>:ExitAll<CR>
+
 "reload file anyway
 nnoremap <silent> <F5> :e!<CR>
 inoremap <silent> <F5> <Esc>:e!<CR>
@@ -135,21 +140,26 @@ nnoremap <silent> <A-Left> :bp<CR>
 inoremap <silent> <A-Left> <Esc>:bp<CR>
 nnoremap <silent> <A-LeftMouse> :bp<CR>
 inoremap <silent> <A-LeftMouse> <Esc>:bp<CR>
+
 "find file
 nnoremap <silent> <C-f> :cs find 6 
 inoremap <silent> <C-f> <Esc>:cs find 6 
 vnoremap <silent> <C-f> <Esc>:cs find 6
+
 "search and replace
 nnoremap <silent> <C-g> :%s/
 inoremap <silent> <C-g> <Esc>:%s/
 vnoremap <silent> <C-g> <Esc>:%s/
+
 "create new file
 nnoremap <silent> <C-n> :e 
 nnoremap <silent> <A-n> :e 
 "inoremap <silent> <C-n> <Esc>:e 
+
 "create new folder
 nnoremap <silent> <C-k> :! mkdir 
 nnoremap <silent> <A-k> :! mkdir 
+
 "execute shell command
 nnoremap <silent> <A-e> :! 
 
@@ -158,85 +168,82 @@ nnoremap <silent> <A-e> :!
 nnoremap <silent> <C-c> "+yy
 inoremap <silent> <C-c> <Esc>"+yya
 vnoremap <silent> <C-c> "+y
+
 "select all test
 nnoremap <silent> <C-a> ggvG
 inoremap <silent> <C-a> <Esc>ggvG
+
 "cut text
 vnoremap <silent> <C-x> "+d
+
 "past text
 nnoremap <silent> <C-v> "+p<Esc>
 inoremap <silent> <C-v> <Esc>"+p<Esc>a
 vnoremap <silent> <C-v> "+p
+
 "delete one line text
 nnoremap <silent> <C-d> dd
 inoremap <silent> <C-d> <Esc>dda
+
 "undo
 nnoremap <silent> <C-z> u
 inoremap <silent> <C-z> <Esc>ua<Left>
 vnoremap <silent> <C-z> ua<Left>
+
 "redo
 inoremap <silent> <C-r> <Esc><C-r>a<Left>
 
 "== Text movement operation ==
 "move cursor to the end
 nnoremap <silent> <End><End> <End>a
-nnoremap <silent> <A-f> <Home>
-inoremap <silent> <A-f> <Home>
-"move cursor to the home
-nnoremap <silent> <Home><Home> <Home>a<Left>
 nnoremap <silent> <A-j> <End>
 inoremap <silent> <A-j> <End>
+
+"move cursor to the home
+nnoremap <silent> <Home><Home> <Home>a<Left>
+nnoremap <silent> <A-f> <Home>
+inoremap <silent> <A-f> <Home>
+
 "move cursor to next line directly
 inoremap <silent> <A-o> <End><CR>
 inoremap <silent> <A-CR> <End><CR>
+
 "enable enter in normal mode
 "nnoremap <silent> <Enter><Enter> a<Left><CR>
 "enable backspace in normal mode
 "nnoremap <silent> <Backspace> a<Left><Backspace>
 "enable space in normal mode
 "nnoremap <silent> w<Space> a<Left><Space>
+
 "fast to file end
 nnoremap <silent> bb Gzz
+
 "fast to file start
 nnoremap <silent> gg 1G
+
 "maps f to first keyword
 nnoremap <silent> f *ggnzz
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
+
 "pageDown
 nnoremap <silent> b <PageDown>
 nnoremap <silent> g <PageUp>
+
 "keep indent when press <ESC> on empty line
 inoremap <CR> <CR>x<BS>
-
-"press alt-o can direct move to next line
 
 "== Format file operation ==
 "toggle line number
 nnoremap <silent> <C-l> :set invnumber<CR>
 inoremap <silent> <C-l> <Esc>:set invnumber<CR>a
+
 "enable <tab> in normal mode
 nnoremap <silent> <Tab> :><CR>
 nnoremap <silent> <S-Tab> :<<CR>
 inoremap <silent> <S-Tab> <Esc>:<<CR>a<Left>
 vnoremap <silent> <Tab> >
 vnoremap <silent> <S-Tab> <
-
-"== cursor movement =="
-" if want the Alt mapping work, you must install the following plugin
-" https://github.com/drmikehenry/vim-fixkey
-"nnoremap <silent> <A-i> <Up>
-"inoremap <silent> <A-i> <Up>
-"nnoremap <silent> <A-k> <Down>
-"inoremap <silent> <A-k> <Down>
-"nnoremap <silent> <A-j> <Left>
-"inoremap <silent> <A-j> <Left>
-"nnoremap <silent> <A-l> <Right>
-"inoremap <silent> <A-l> <Right>
-"nnoremap <silent> <A-u> <PageUp>
-"inoremap <silent> <A-u> <PageUp>
-"nnoremap <silent> <A-o> <PageDown>
-"inoremap <silent> <A-o> <PageDown>
 
 "== Programming operation ==
 "for toggleComment
@@ -266,8 +273,10 @@ nnoremap <silent> <Space> zR	"unfold all
 inoremap ( ()<Left>
 inoremap [ []<Left>
 "inoremap < <><Left>
-"inoremap { {<CR>}<Esc>ko<TAB>
-inoremap { {}<Left>
+autocmd FileType c,cpp,java,php inoremap { {<CR>}<Esc>ko<TAB>
+autocmd FileType python,html inoremap { {}<Left>
+
+"comment
 inoremap <C-w> /*<Space><Space>*/<Left><Left><Left>
 nnoremap <C-w> i/*<Space><Space>*/<Left><Left><Left>
 inoremap <A-w> {%<Space><Space>%}<Left><Left><Left>
