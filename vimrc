@@ -40,23 +40,23 @@ autocmd VimLeave * call CloseProject()
 
 "Expand tab in source code
 autocmd BufRead,BufNewFile *.py,*.java,*.xml
- \ set softtabstop=4
- \ | set shiftwidth=4
- \ | set expandtab
- \ | set autoindent
+	\ set softtabstop=4
+	\ | set shiftwidth=4
+	\ | set expandtab
+	\ | set autoindent
 
 autocmd BufRead,BufNewFile *.php,*.htm,*.html,*.css
- \ set softtabstop=2
- \ | set shiftwidth=2
- \ | set expandtab
- \ | set autoindent
+	\ set softtabstop=2
+	\ | set shiftwidth=2
+	\ | set expandtab
+	\ | set autoindent
 
 autocmd BufRead,BufNewFile *.c,*.h,*.cpp,*.cc
- \ | set softtabstop=4
- \ | set shiftwidth=4
- \ | set noexpandtab
- \ | set cindent
- \ | set autoindent
+	\ set softtabstop=4
+	\ | set shiftwidth=4
+	\ | set noexpandtab
+	\ | set cindent
+	\ | set autoindent
 
 "set line 80 color
 autocmd BufRead,BufNewFile * setlocal colorcolumn=80
